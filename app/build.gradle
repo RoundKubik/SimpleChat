@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        applicationId "ru.kubov.simplechat"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode versionCode
+        versionName versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation daggerDep
+    kapt daggerKapt
+    implementation materialDep
+    implementation kotlinDep
+
+    implementation androidDep
+    implementation constraintDep
+
+    implementation lifecycleVMDep
+    implementation lifecycleLiveDataDep
+    implementation lifecycleRuntimeDep
+    kapt lifecycleKapt
+
+    implementation navigationFragmentDep
+    implementation navigationUiDep
+
+    implementation coroutinesDep
+    implementation coroutinesAndroidDep
+
+    implementation okHttpDep
+    implementation retrofitDep
+    implementation retrofitAdapterDep
+    implementation rxJavaDep
+    implementation rxAndroidDep
+    implementation rxKotlinDep
+    implementation gsonConverterDep
+    implementation gsonDep
+
+    implementation roomDep
+    kapt roomDep
+
+
+}

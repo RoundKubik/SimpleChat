@@ -1,0 +1,10 @@
+rootProject.name = "SimpleChat"
+include ':app'
+include ':module-injection'
+include ':core-db-api'
+include ':core-db-impl'
+include ':core-network-api'
+include ':core-network-impl'
+include ':core-utils'
+include ':feature-profile-impl'
+include ':feature-profile-api'
