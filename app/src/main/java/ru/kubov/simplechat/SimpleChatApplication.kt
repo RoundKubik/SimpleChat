@@ -9,10 +9,10 @@ import javax.inject.Inject
 class SimpleChatApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        DaggerAppComponent
+     /*   DaggerAppComponent
             .builder()
             .application(this)
             .build()
-            .inject(this)
+            .inject(this)*/
     }
 }

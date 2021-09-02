@@ -5,16 +5,16 @@ import dagger.BindsInstance
 import dagger.Subcomponent
 import ru.kubov.simplechat.root.presentation.main.MainFragment
 
-@Subcomponent(
+/*@Subcomponent(
     modules = [
         MainFragmentModule::class
     ]
-)
+)*/
 // TODO: 02.09.2021 check and remove
-@ScreenScope
+//@ScreenScope
 interface MainFragmentComponent {
 
-    @Subcomponent.Factory
+   /* @Subcomponent.Factory
     interface Factory {
 
         fun create(
@@ -22,5 +22,5 @@ interface MainFragmentComponent {
         ): MainFragmentComponent
     }
 
-    fun inject(fragment: MainFragment)
+    fun inject(fragment: MainFragment)*/
 }

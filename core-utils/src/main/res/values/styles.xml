@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ClickableItem">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="TextView.Main" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+        <item name="android:textColor">@color/main_text_color</item>
+    </style>
+
+    <style name="TextView.SettingTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+        <item name="android:textColor">@color/hint_text_color</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextView.Bold" parent="TextView.Main">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+    </style>
+</resources>

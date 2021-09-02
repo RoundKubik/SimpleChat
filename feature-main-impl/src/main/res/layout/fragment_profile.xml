@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/frg_profile__iv_avatar"
+                android:layout_width="@dimen/dp_144"
+                android:layout_height="@dimen/dp_144"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_36" />
+
+            <TextView
+                android:id="@+id/frg_profile__tv_nickname"
+                style="@style/TextView.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dp_16"
+                tools:text="RoundKubik" />
+
+            <TextView
+                style="@style/TextView.SettingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/account" />
+
+            <include layout="@layout/item_profile_menu_option" />
+
+            <TextView
+                style="@style/TextView.SettingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/settings"/>
+
+            <include layout="@layout/item_profile_menu_option" />
+
+            <include layout="@layout/item_profile_menu_option" />
+
+            <include layout="@layout/item_profile_menu_option" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

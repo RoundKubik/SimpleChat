@@ -10,16 +10,6 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/root_nav_graph"
+        app:navGraph="@navigation/main_nav_graph"
         app:defaultNavHost="true" />
-
-    <TextView
-        android:id="@+id/rootNetworkBar"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:paddingTop="@dimen/dp_16"
-        android:visibility="gone"
-        android:paddingBottom="@dimen/dp_2"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top" />
 </FrameLayout>

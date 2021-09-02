@@ -12,14 +12,14 @@ import javax.inject.Singleton
 interface AppModule {
 
 
-    @Singleton
+  /*  @Singleton
     @Binds
     fun bindContext(app: SimpleChatApplication): Context
 
     @Singleton
     @Binds
     fun bindApplication(app: SimpleChatApplication): Application
-
+*/
 
    /* @Singleton
     @Provides

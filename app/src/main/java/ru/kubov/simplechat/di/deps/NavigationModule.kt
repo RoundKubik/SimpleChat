@@ -8,7 +8,7 @@ import javax.inject.Singleton
 @Module
 interface NavigationModule {
 
-    @Singleton
+   /* @Singleton
     @Provides
-    fun provideNavigator(): Navigator = Navigator()
+    fun provideNavigator(): Navigator = Navigator()*/
 }

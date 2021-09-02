@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider">#122620</color>
+    <color name="main_text_color">#122620</color>
+    <color name="hint_text_color">#333533</color>
+</resources>

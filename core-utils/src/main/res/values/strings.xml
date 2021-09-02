@@ -3,4 +3,7 @@
     <string name="menu_chats">Чаты</string>
     <string name="menu_search">Поиск</string>
     <string name="menu_profile">Профиль</string>
+    <string name="account">Аккаунт</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="settings">Настройки</string>
 </resources>
