@@ -1,4 +1,5 @@
 package ru.kubov.simplechat.root.presentation.simple_chat
 
-class SimpleChatViewModel {
-}
+import androidx.lifecycle.ViewModel
+
+class SimpleChatViewModel : ViewModel()

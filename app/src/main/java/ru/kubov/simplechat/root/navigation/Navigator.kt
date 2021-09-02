@@ -10,17 +10,14 @@ import androidx.navigation.NavController
 class Navigator {
 
     private var navController: NavController? = null
-    private var activity: AppCompatActivity? = null
 
     /**
      *  Method provides attaching navigation controller [NavController] and activity [AppCompatActivity]
      *
      *  @param navController - main navigation controller
-     *  @param activity - activity for navigation
      */
-    fun attach(navController: NavController, activity: AppCompatActivity) {
+    fun attach(navController: NavController) {
         this.navController = navController
-        this.activity = activity
     }
 
     /**
@@ -29,6 +26,5 @@ class Navigator {
      */
     fun detach() {
         navController = null
-        activity = null
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/walletFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_chat_25"
+        android:title="@string/menu_chats"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/stakingFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_search_25"
+        android:title="@string/menu_search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_profile_25"
+        android:title="@string/menu_profile"
+        app:showAsAction="ifRoom" />
+</menu>

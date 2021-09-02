@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":core-utils")
 
     implementation daggerDep
     kapt daggerKapt
@@ -70,6 +71,4 @@ dependencies {
 
     implementation roomDep
     kapt roomDep
-
-
 }

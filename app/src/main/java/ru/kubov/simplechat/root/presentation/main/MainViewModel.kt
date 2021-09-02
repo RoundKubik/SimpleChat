@@ -1,4 +1,6 @@
 package ru.kubov.simplechat.root.presentation.main
 
-class MainViewModel {
+import androidx.lifecycle.ViewModel
+
+class MainViewModel : ViewModel() {
 }
