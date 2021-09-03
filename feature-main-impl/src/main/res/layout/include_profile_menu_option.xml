@@ -6,7 +6,7 @@
     android:layout_height="@dimen/dp_56">
 
     <ImageView
-        android:id="@+id/item_profile_menu_options__iv_icon"
+        android:id="@+id/include_profile_menu_options__iv_icon"
         android:layout_width="@dimen/dp_24"
         android:layout_height="@dimen/dp_24"
         android:layout_marginStart="@dimen/dp_16"
@@ -15,14 +15,14 @@
         tools:src="@drawable/ic_edit_24" />
 
     <TextView
-        android:id="@+id/item_profile_menu_options__tv_title"
+        android:id="@+id/include_profile_menu_options__tv_title"
         style="@style/TextView.Main"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_24"
         android:layout_centerVertical="true"
         android:layout_marginHorizontal="@dimen/dp_16"
         android:layout_marginStart="@dimen/dp_16"
-        android:layout_toEndOf="@id/item_profile_menu_options__iv_icon"
+        android:layout_toEndOf="@id/include_profile_menu_options__iv_icon"
         tools:text="@string/edit_profile" />
 
     <ImageView

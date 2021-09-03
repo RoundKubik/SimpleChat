@@ -6,4 +6,7 @@
     <string name="account">Аккаунт</string>
     <string name="edit_profile">Редактировать профиль</string>
     <string name="settings">Настройки</string>
+    <string name="exit_from_profile">Выйти из профиля</string>
+    <string name="theme">Тема</string>
+    <string name="data_and_storage">Данные хранилища</string>
 </resources>
