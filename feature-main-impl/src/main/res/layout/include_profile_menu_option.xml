@@ -26,12 +26,12 @@
         tools:text="@string/edit_profile" />
 
     <ImageView
-        android:layout_width="@dimen/dp_24"
-        android:layout_height="@dimen/dp_24"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/dp_16"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_right_arrow_24" />
+        android:src="@drawable/ic_right_arrow_16" />
 
     <View
         android:layout_width="match_parent"

@@ -76,10 +76,6 @@ class MainFragment : Fragment() {
         backCallback.isEnabled = false
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
     /**
      * Check start tab
      */
@@ -88,22 +84,6 @@ class MainFragment : Fragment() {
 
     private fun initViews() {
         binding.frgMainBnvBottomNavigationView.itemIconTintList = null
-        binding.frgMainBnvBottomNavigationView.setOnApplyWindowInsetsListener { _, insets ->
-            // overwrite BottomNavigation behavior and ignore insets
-            insets
-        }
-        binding.frgMainFcvBottomNavHost.setOnApplyWindowInsetsListener { v, insets ->
-           /* val systemWindowInsetBottom = insets.systemWindowInsetBottom*/
-
-            /*// post to prevent bottomNavigationView.height being 0 if callback is called before view has been measured
-            v.post {
-                val padding = (systemWindowInsetBottom - binding.frgMainBnvBottomNavigationView.height).coerceAtLeast(0)
-                v.updatePadding(bottom = padding)
-            }*/
-
-            insets
-        }
-
         val nestedNavHostFragment =
             childFragmentManager.findFragmentById(R.id.frg_main__fcv_bottom_nav_host) as NavHostFragment
         navController = nestedNavHostFragment.navController

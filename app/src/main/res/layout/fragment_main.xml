@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:labelVisibilityMode="unlabeled"
-        app:itemBackground="@drawable/bnv_tab_item_foreground"
+        app:itemIconSize="@dimen/dp_36"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
