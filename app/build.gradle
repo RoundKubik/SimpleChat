@@ -40,9 +40,15 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":core-utils")
+    implementation project(":feature-main-api")
+    implementation project(":feature-main-impl")
+    implementation project(":module-injection")
+
+
 
     implementation daggerDep
     kapt daggerKapt
+
     implementation materialDep
     implementation kotlinDep
 

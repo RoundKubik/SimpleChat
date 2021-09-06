@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/bottomNavHost"
+        android:id="@+id/frg_main__fcv_bottom_nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -15,12 +15,12 @@
         app:navGraph="@navigation/bottom_nav_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
+        android:id="@+id/frg_main__bnv_bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:itemIconTint="@null"
         app:labelVisibilityMode="unlabeled"
+        app:itemBackground="@drawable/bnv_tab_item_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 

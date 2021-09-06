@@ -6,18 +6,20 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
+import ru.kubov.core_utils.presentation.viewmodel.ViewModelKey
+import ru.kubov.core_utils.presentation.viewmodel.ViewModelModule
 import ru.kubov.simplechat.root.presentation.main.MainViewModel
 
-/*@Module(
+@Module(
     includes = [
         ViewModelModule::class
     ]
-)*/
+)
 class MainFragmentModule {
 
-  /*  @Provides
+    @Provides
     @IntoMap
-   // @ViewModelKey(MainViewModel::class)
+    @ViewModelKey(MainViewModel::class)
     fun provideViewModel(): ViewModel {
         return MainViewModel()
     }
@@ -28,5 +30,5 @@ class MainFragmentModule {
         viewModelFactory: ViewModelProvider.Factory
     ): MainViewModel {
         return ViewModelProvider(activity, viewModelFactory).get(MainViewModel::class.java)
-    }*/
+    }
 }

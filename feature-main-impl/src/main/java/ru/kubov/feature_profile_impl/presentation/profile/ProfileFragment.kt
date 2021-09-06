@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import ru.kubov.feature_profile_impl.R
 import ru.kubov.feature_profile_impl.databinding.FragmentProfileBinding
 import ru.kubov.feature_profile_impl.databinding.IncludeProfileMenuOptionBinding
+import ru.kubov.feature_profile_impl.di.module.MainFeatureComponent
+import ru.kubov.feature_profile_impl.di.module.MainFeatureComponentHolder
+import javax.inject.Inject
 
 
 /**
@@ -15,8 +18,8 @@ import ru.kubov.feature_profile_impl.databinding.IncludeProfileMenuOptionBinding
  */
 class ProfileFragment : Fragment() {
 
-     //@Inject
-     lateinit var viewModel: ProfileViewModel
+    @Inject
+    lateinit var viewModel: ProfileViewModel
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -65,12 +68,15 @@ class ProfileFragment : Fragment() {
     }
 
     private fun subscribe() {
-        viewModel.profile.observe(this.viewLifecycleOwner) {
-            
-        }
+        /*viewModel.profile.observe(this.viewLifecycleOwner) {
+
+        }*/
     }
 
     private fun inject() {
-
+        (MainFeatureComponentHolder.get() as MainFeatureComponent)
+            .profileComponentFactory()
+            .create(this)
+            .inject(this)
     }
 }

@@ -1,3 +1,3 @@
 package ru.kubov.module_injection.base
 
-interface BaseAPI
+interface BaseApi<D: BaseDependencies>

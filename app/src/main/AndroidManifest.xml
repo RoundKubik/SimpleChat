@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".SimpleChatApplication"
         android:theme="@style/Theme.SimpleChat">
         <activity android:name=".root.presentation.simple_chat.SimpleChatActivity">
             <intent-filter>

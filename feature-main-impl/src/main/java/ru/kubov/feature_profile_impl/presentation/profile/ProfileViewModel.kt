@@ -14,7 +14,7 @@ class ProfileViewModel : ViewModel() {
     /**
      * Provides profile info see model [Profile]
      */
-    lateinit var _profile : MutableLiveData<Profile>
-    val  profile : LiveData<Profile> get() = _profile
+   /* lateinit var _profile : MutableLiveData<Profile>
+    val  profile : LiveData<Profile> get() = _profile*/
 
 }

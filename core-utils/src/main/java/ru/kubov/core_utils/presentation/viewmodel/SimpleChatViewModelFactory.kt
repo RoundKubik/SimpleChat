@@ -1,12 +1,11 @@
 package ru.kubov.core_utils.presentation.viewmodel
 
-/*
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import javax.inject.Inject
 import javax.inject.Provider
 
-class SoraViewModelFactory @Inject constructor(
+class SimpleChatViewModelFactory @Inject constructor(
     private val creators: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
 
@@ -21,4 +20,4 @@ class SoraViewModelFactory @Inject constructor(
             throw RuntimeException(e)
         }
     }
-}*/
+}
