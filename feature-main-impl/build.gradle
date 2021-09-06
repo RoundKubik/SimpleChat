@@ -43,6 +43,7 @@ dependencies {
 
     // dagger dep
     implementation daggerDep
+    implementation 'androidx.fragment:fragment-ktx:1.3.6'
     kapt daggerKapt
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"

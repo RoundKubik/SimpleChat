@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import ru.kubov.feature_profile_impl.R
 import ru.kubov.feature_profile_impl.databinding.FragmentProfileBinding
@@ -17,6 +18,10 @@ import javax.inject.Inject
  * Class implements ui of user profile
  */
 class ProfileFragment : Fragment() {
+
+    companion object {
+        fun makeBundle() = bundleOf()
+    }
 
     @Inject
     lateinit var viewModel: ProfileViewModel
