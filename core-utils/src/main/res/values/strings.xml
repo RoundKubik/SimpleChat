@@ -9,4 +9,9 @@
     <string name="exit_from_profile">Выйти из профиля</string>
     <string name="theme">Тема</string>
     <string name="data_and_storage">Данные хранилища</string>
+    <string name="nickname">Никнейм</string>
+    <string name="nickname_hint" translatable="false">\@nickname</string>
+
+    <string name="clear_images_cache">Очистить кэш изображений</string>
+    <string name="settings_storage_and_data">Настройки данных и хранилища</string>
 </resources>

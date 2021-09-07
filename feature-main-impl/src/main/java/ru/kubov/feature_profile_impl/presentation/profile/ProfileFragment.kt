@@ -20,6 +20,7 @@ import javax.inject.Inject
 class ProfileFragment : Fragment() {
 
     companion object {
+        // TODO: 07.09.2021 make bundle for navigation
         fun makeBundle() = bundleOf()
     }
 

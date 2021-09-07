@@ -13,10 +13,15 @@
         <item name="android:textColor">@color/main_text_color</item>
     </style>
 
+    <style name="TextView.DefaultListItem" parent="TextView.Main">
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:padding">@dimen/dp_16</item>
+    </style>
+
     <style name="TextView.SettingTitle" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/montserrat_medium</item>
         <item name="android:textSize">@dimen/sp_13</item>
-        <item name="android:textColor">@color/hint_text_color</item>
+        <item name="android:textColor">@color/main_text_color</item>
         <item name="android:paddingLeft">@dimen/dp_16</item>
         <item name="android:textAllCaps">true</item>
     </style>
@@ -24,5 +29,27 @@
     <style name="TextView.Bold" parent="TextView.Main">
         <item name="android:fontFamily">@font/montserrat_bold</item>
         <item name="android:textSize">@dimen/sp_24</item>
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_56</item>
+    </style>
+
+    <style name="VerticalScrollbars">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:scrollbarSize">2.0dp</item>
+        <item name="android:scrollbarFadeDuration">125</item>
+        <item name="android:scrollbarDefaultDelayBeforeFade">250</item>
+    </style>
+
+    <style name="EditText.Input" parent="Widget.AppCompat.EditText">
+        <item name="android:padding">@dimen/dp_8</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+        <item name="android:hint">@string/nickname_hint</item>
+        <item name="android:background">@drawable/background_input_edit_text</item>
+        <item name="android:inputType">text</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/main_text_color</item>
     </style>
 </resources>

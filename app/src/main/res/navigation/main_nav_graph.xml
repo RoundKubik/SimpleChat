@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/mainFragment"
+    app:startDestination="@id/editProfileFragment"
     android:id="@+id/main_nav_graph">
 
     <fragment
@@ -10,4 +10,8 @@
         tools:layout="@layout/fragment_main"
         android:name="ru.kubov.simplechat.root.presentation.main.MainFragment"
         android:label="MainFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="ru.kubov.feature_profile_impl.presentation.edit_profile.EditProfileFragment"
+        android:label="EditProfileFragment" />
 </navigation>

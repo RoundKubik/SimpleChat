@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/frg_settings_data_and_storage__layout_toolbar"
+        layout="@layout/include_base_toolbar" />
+
+    <TextView
+        android:id="@+id/frg_settings_data_and_storage__tv_clear_data"
+        style="@style/TextView.DefaultListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frg_settings_data_and_storage__layout_toolbar"
+        android:text="@string/clear_images_cache" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/frg_settings_data_and_storage__tv_clear_data"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:background="@color/divider" />
+
+</RelativeLayout>

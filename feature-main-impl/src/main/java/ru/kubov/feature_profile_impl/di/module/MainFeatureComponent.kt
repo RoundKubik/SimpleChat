@@ -6,6 +6,8 @@ import ru.kubov.feature_profile_api.di.MainFeatureApi
 import ru.kubov.feature_profile_api.di.MainFeatureDependencies
 import ru.kubov.feature_profile_impl.di.presentation.edit_profile.EditProfileComponent
 import ru.kubov.feature_profile_impl.di.presentation.profile.ProfileComponent
+import ru.kubov.feature_profile_impl.di.presentation.settings_data_and_storage.SettingsDataAndStorageComponent
+import ru.kubov.feature_profile_impl.presentation.settings_data_and_storage.SettingsDataAndStorageFragment
 
 
 @Component(
@@ -17,6 +19,7 @@ interface MainFeatureComponent : MainFeatureApi {
 
     fun profileComponentFactory(): ProfileComponent.Factory
     fun editProfileComponentFactory(): EditProfileComponent.Factory
+    fun settingsDataAndStorageComponentFactory(): SettingsDataAndStorageComponent.Factory
 
     @Component.Factory
     interface Factory {

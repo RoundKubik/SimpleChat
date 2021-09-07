@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ToolbarStyle">
+
+    <TextView
+        android:id="@+id/include_base_toolbar__tv_title"
+        style="@style/TextView.Main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="@dimen/sp_18"
+        tools:text="Профиль" />
+
+    <ImageView
+        android:id="@+id/include_base_toolbar__iv_icon_back"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left|center_vertical"
+        android:src="@drawable/ic_arrow_left_24" />
+
+</RelativeLayout>

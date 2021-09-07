@@ -3,4 +3,6 @@
     <color name="divider">#122620</color>
     <color name="main_text_color">#122620</color>
     <color name="hint_text_color">#333533</color>
+    <color name="background_edit_text_selected">#189AB4</color>
+    <color name="background_edit_text_default">#D4F1F4</color>
 </resources>
