@@ -6,6 +6,6 @@
         android:topLeftRadius="@dimen/dp_24"
         android:topRightRadius="@dimen/dp_24" />
 
-    <solid android:color="@color/background_primary" />
+    <solid android:color="@color/background_secondary" />
 
 </shape>

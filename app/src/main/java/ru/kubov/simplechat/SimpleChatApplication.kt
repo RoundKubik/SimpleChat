@@ -5,7 +5,7 @@ import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import com.facebook.imagepipeline.core.ImageTranscoderType
 import com.facebook.imagepipeline.core.MemoryChunkType
-import ru.kubov.feature_profile_impl.di.module.MainFeatureComponentHolder
+import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
 import ru.kubov.module_injection.holder.ComponentHolder
 import ru.kubov.simplechat.di.app.AppComponent
 import ru.kubov.simplechat.di.app.DaggerAppComponent

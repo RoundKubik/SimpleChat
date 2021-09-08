@@ -2,16 +2,24 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/mainFragment"
-    android:id="@+id/main_nav_graph">
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
-        tools:layout="@layout/fragment_main"
         android:name="ru.kubov.simplechat.root.presentation.main.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main" />
+
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="ru.kubov.feature_profile_impl.presentation.edit_profile.EditProfileFragment"
-        android:label="EditProfileFragment" />
+        android:name="ru.kubov.feature_main_impl.presentation.edit_profile.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/settingsDataAndStorageFragment"
+        android:name="ru.kubov.feature_main_impl.presentation.settings_data_and_storage.SettingsDataAndStorageFragment"
+        android:label="SettingsDataAndStorageFragment"
+        tools:layout="@layout/fragment_settings_data_and_storage" />
 </navigation>

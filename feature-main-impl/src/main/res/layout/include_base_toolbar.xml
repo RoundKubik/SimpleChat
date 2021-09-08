@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/ToolbarStyle"
 
-    android:background="@color/background_primary">
+    android:background="@color/background_secondary">
 
     <TextView
         android:id="@+id/include_base_toolbar__tv_title"

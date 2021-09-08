@@ -1,7 +1,6 @@
 package ru.kubov.simplechat.root.presentation.main
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,10 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
-import ru.kubov.feature_profile_impl.presentation.profile.ProfileFragment
+import ru.kubov.feature_main_impl.presentation.profile.ProfileFragment
 import ru.kubov.simplechat.R
 import ru.kubov.simplechat.databinding.FragmentMainBinding
 import ru.kubov.simplechat.di.root.RootComponent

@@ -1,13 +1,9 @@
 package ru.kubov.simplechat.root.presentation.simple_chat
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
-import ru.kubov.feature_profile_impl.di.module.MainFeatureComponentHolder
 import ru.kubov.simplechat.R
 import ru.kubov.simplechat.databinding.ActivitySimpleChatBinding
 import ru.kubov.simplechat.di.root.RootComponent
@@ -28,7 +24,7 @@ class SimpleChatActivity : AppCompatActivity() {
      * App entity [Navigator] implements navigation between screens
      */
     @Inject
-    lateinit var navigatior: Navigator
+    lateinit var navigator: Navigator
 
     /**
      * Activity view model [SimpleChatViewModel]
@@ -57,12 +53,12 @@ class SimpleChatActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        navigatior.attach(this, navController)
+        navigator.attach(this, navController)
     }
 
     override fun onPause() {
         super.onPause()
-        navigatior.detach()
+        navigator.detach()
         if (isFinishing) {
             RootComponentHolder.reset()
         }

@@ -3,15 +3,16 @@ package ru.kubov.simplechat.root.navigation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import ru.kubov.feature_profile_api.navigation.MainRouter
+import ru.kubov.feature_main_api.navigation.MainRouter
 import ru.kubov.simplechat.R
-import javax.inject.Inject
+import javax.inject.Singleton
 
 
 /**
  * Entity implements navigation between, fragments
  */
-class Navigator @Inject constructor() : MainRouter {
+@Singleton
+class Navigator : MainRouter {
 
     private companion object {
         private val TAG = Navigator::class.simpleName
@@ -65,10 +66,24 @@ class Navigator @Inject constructor() : MainRouter {
     /**
      * Implements back navigation between fragments
      */
-    fun back() {
+    override fun back() {
         val popped = lastUsedNavController!!.popBackStack()
         if (!popped && lastUsedNavController == navController) {
             activity!!.finish()
         }
+    }
+
+    /**
+     * Implements navigation to edit profile screen
+     */
+    override fun openEditProfileFragment() {
+        navController?.navigate(R.id.editProfileFragment)
+    }
+
+    /**
+     * Implements navigation to open settings of storage and data of images cache
+     */
+    override fun openSettingsStorageAndData() {
+        navController?.navigate(R.id.settingsDataAndStorageFragment)
     }
 }
