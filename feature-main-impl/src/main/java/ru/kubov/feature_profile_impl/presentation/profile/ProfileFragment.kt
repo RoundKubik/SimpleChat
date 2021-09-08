@@ -1,9 +1,12 @@
 package ru.kubov.feature_profile_impl.presentation.profile
 
+import android.app.Activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -11,6 +14,8 @@ import ru.kubov.core_utils.databinding.DialogDoubleChoiseBinding
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.presentation.view.SheetDialog
 import ru.kubov.feature_profile_impl.R
+import com.github.dhaval2404.imagepicker.ImagePicker
+import ru.kubov.core_utils.extensions.showImage
 import ru.kubov.feature_profile_impl.databinding.FragmentProfileBinding
 import ru.kubov.feature_profile_impl.databinding.IncludeProfileMenuOptionBinding
 import ru.kubov.feature_profile_impl.di.module.MainFeatureComponent
@@ -94,6 +99,17 @@ class ProfileFragment : Fragment() {
         return@lazy dialog
     }
 
+    private val startForPickProfileImageResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            val resultCode = result.resultCode
+            val data = result.data
+
+            if (resultCode == Activity.RESULT_OK) {
+                val fileUri = data?.data!!
+                binding.frgProfileIvAvatar.showImage(fileUri)
+            }
+        }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         inject()
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -109,6 +125,7 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initMenuOptions()
         subscribe()
+        initViews()
     }
 
     private fun initMenuOptions() {
@@ -146,6 +163,15 @@ class ProfileFragment : Fragment() {
             root.setDebounceClickListener {
                 logoutDialog.show()
             }
+        }
+    }
+
+    private fun initViews() {
+        binding.frgProfileIvAvatar.setDebounceClickListener {
+            ImagePicker.with(this)
+                .createIntent {
+                    startForPickProfileImageResult.launch(it)
+                }
         }
     }
 

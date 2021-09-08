@@ -2,6 +2,7 @@
 <resources>
     <color name="divider">#122620</color>
     <color name="main_text_color">#122620</color>
+    <color name="main_text_color_light">#FFFFFF</color>
     <color name="hint_text_color">#333533</color>
     <color name="background_edit_text_selected">#189AB4</color>
     <color name="background_edit_text_default">#D4F1F4</color>
@@ -9,4 +10,6 @@
     <color name="error_text_color">#911F27</color>
 
     <color name="overlay_sheet_dialog">#000000</color>
+
+    <color name="background_toast_color">#000000</color>
 </resources>

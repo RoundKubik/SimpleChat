@@ -24,4 +24,7 @@
 
     <string name="light_theme">Свтелая</string>
     <string name="dark_theme">Тёмная</string>
+
+    <string name="about_self">О себе</string>
+    <string name="images_cache_cleared">Кэш изображений успешно очищен</string>
 </resources>

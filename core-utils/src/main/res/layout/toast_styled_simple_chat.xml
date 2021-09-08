@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_toast_styled_simple_chat"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/toast_styled_simple_chat__iv_icon"
+        android:layout_width="@dimen/dp_36"
+        android:visibility="gone"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginVertical="@dimen/dp_10"
+        android:layout_marginStart="@dimen/dp_18" />
+
+    <TextView
+        android:id="@+id/toast_styled_simple_chat__tv_toast_title"
+        style="@style/TextView.MainLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_18"
+        android:layout_marginVertical="@dimen/dp_16"
+        tools:text="Данные изображений успешно очищенны" />
+
+</LinearLayout>

@@ -4,4 +4,8 @@ import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
 class EditProfileViewModel @Inject constructor(): ViewModel() {
+
+    fun back() {
+
+    }
 }

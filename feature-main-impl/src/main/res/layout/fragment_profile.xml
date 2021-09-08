@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto">
 
     <androidx.core.widget.NestedScrollView
         style="@style/VerticalScrollbars"
@@ -16,8 +17,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/frg_profile__iv_avatar"
+                fresco:roundBottomEnd="true"
+                fresco:roundTopEnd="true"
+                fresco:roundTopStart="true"
+                fresco:roundBottomStart="true"
+                fresco:roundedCornerRadius="@dimen/dp_24"
+                fresco:roundingBorderWidth="@dimen/dp_2"
                 android:layout_width="@dimen/dp_144"
                 android:layout_height="@dimen/dp_144"
                 android:layout_gravity="center_horizontal"
@@ -31,6 +38,16 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="@dimen/dp_16"
                 android:text="RoundKubik"
+                tools:text="RoundKubik" />
+
+            <TextView
+                android:id="@+id/frg_profile__tv_bio"
+                style="@style/TextView.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_32"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/dp_16"
+                android:text="Android dev"
                 tools:text="RoundKubik" />
 
             <TextView

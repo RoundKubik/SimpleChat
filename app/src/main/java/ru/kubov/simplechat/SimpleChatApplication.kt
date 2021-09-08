@@ -1,6 +1,10 @@
 package ru.kubov.simplechat
 
 import android.app.Application
+import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.imagepipeline.core.ImagePipelineConfig
+import com.facebook.imagepipeline.core.ImageTranscoderType
+import com.facebook.imagepipeline.core.MemoryChunkType
 import ru.kubov.feature_profile_impl.di.module.MainFeatureComponentHolder
 import ru.kubov.module_injection.holder.ComponentHolder
 import ru.kubov.simplechat.di.app.AppComponent
@@ -21,6 +25,7 @@ class SimpleChatApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         initDeps()
+        initExternalLibraries()
         appComponent = DaggerAppComponent
             .builder()
             .application(this)
@@ -38,5 +43,16 @@ class SimpleChatApplication : Application() {
     private fun initDeps() {
         RootComponentHolder.init()
         MainFeatureComponentHolder.init()
+    }
+
+    private fun initExternalLibraries() {
+        Fresco.initialize(
+            applicationContext,
+            ImagePipelineConfig.newBuilder(applicationContext)
+                .setMemoryChunkType(MemoryChunkType.BUFFER_MEMORY)
+                .setImageTranscoderType(ImageTranscoderType.JAVA_TRANSCODER)
+                .experiment().setNativeCodeDisabled(true)
+                .build()
+        )
     }
 }

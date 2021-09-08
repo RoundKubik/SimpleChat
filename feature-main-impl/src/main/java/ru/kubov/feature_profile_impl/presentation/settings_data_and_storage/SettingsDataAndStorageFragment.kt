@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.facebook.drawee.backends.pipeline.Fresco
 import ru.kubov.core_utils.extensions.setDebounceClickListener
+import ru.kubov.core_utils.presentation.view.StyledToastSimpleChat
 import ru.kubov.feature_profile_impl.R
 import ru.kubov.feature_profile_impl.databinding.FragmentSettingsDataAndStorageBinding
 import ru.kubov.feature_profile_impl.databinding.IncludeBaseToolbarBinding
@@ -39,16 +41,14 @@ class SettingsDataAndStorageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initToolbar()
-
-        // TODO: 07.09.2021 provide toast or bottom sheet to inform that user currently clear data
         binding.frgSettingsDataAndStorageTvClearData.setDebounceClickListener {
             clearImageData()
         }
     }
 
-    // TODO: 07.09.2021 add logic to clear image data
     private fun clearImageData() {
-
+        viewModel.clearImageData()
+        StyledToastSimpleChat.makeToast(requireContext(), getString(R.string.images_cache_cleared))
     }
 
     private fun initToolbar() {

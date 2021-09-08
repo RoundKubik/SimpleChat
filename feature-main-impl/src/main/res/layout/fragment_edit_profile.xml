@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:background="@color/background_primary"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -24,10 +25,18 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/frg_edit_profile__iv_avatar"
+                fresco:roundBottomEnd="true"
+                fresco:roundTopEnd="true"
+                fresco:roundTopStart="true"
+                fresco:roundBottomStart="true"
+                fresco:roundedCornerRadius="@dimen/dp_24"
+                fresco:roundingBorderWidth="@dimen/dp_2"
                 android:layout_width="@dimen/dp_144"
                 android:layout_height="@dimen/dp_144"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/dp_36" />
+
+
 
             <TextView
                 android:id="@+id/frg_edit_profile__tv_nickname"
@@ -47,6 +56,22 @@
 
             <ru.kubov.core_utils.presentation.view.NickNameEditText
                 android:id="@+id/frg_edit_profile_et_edit_nick_name"
+                style="@style/EditText.Input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8" />
+
+
+            <TextView
+                style="@style/TextView.SettingTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_18"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="@string/about_self" />
+
+            <ru.kubov.core_utils.presentation.view.NickNameEditText
+                android:id="@+id/frg_edit_profile_et_edit_bio"
                 style="@style/EditText.Input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

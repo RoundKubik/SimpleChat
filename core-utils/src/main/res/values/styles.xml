@@ -13,6 +13,9 @@
         <item name="android:textColor">@color/main_text_color</item>
     </style>
 
+    <style name="TextView.MainLight" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/main_text_color_light</item>
+    </style>
 
     <style name="TextView.DialogMain" parent="TextView.Main">
         <item name="android:gravity">center</item>
