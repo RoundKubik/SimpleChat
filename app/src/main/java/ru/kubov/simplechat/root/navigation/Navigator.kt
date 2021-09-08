@@ -3,7 +3,7 @@ package ru.kubov.simplechat.root.navigation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import ru.kubov.feature_profile_api.navigation.MainRouter
+import ru.kubov.feature_main_api.navigation.MainRouter
 import ru.kubov.simplechat.R
 import javax.inject.Inject
 
@@ -65,10 +65,18 @@ class Navigator @Inject constructor() : MainRouter {
     /**
      * Implements back navigation between fragments
      */
-    fun back() {
+    override fun back() {
         val popped = lastUsedNavController!!.popBackStack()
         if (!popped && lastUsedNavController == navController) {
             activity!!.finish()
         }
+    }
+
+    override fun openEditProfileScreen() {
+        TODO("Not yet implemented")
+    }
+
+    override fun openSettingsThemeScreen() {
+        TODO("Not yet implemented")
     }
 }

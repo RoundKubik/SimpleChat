@@ -12,6 +12,6 @@
         android:label="MainFragment" />
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="ru.kubov.feature_profile_impl.presentation.edit_profile.EditProfileFragment"
+        android:name="ru.kubov.feature_main_impl.presentation.edit_profile.EditProfileFragment"
         android:label="EditProfileFragment" />
 </navigation>

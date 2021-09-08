@@ -1,13 +1,9 @@
 package ru.kubov.simplechat.root.presentation.simple_chat
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
-import ru.kubov.feature_profile_impl.di.module.MainFeatureComponentHolder
 import ru.kubov.simplechat.R
 import ru.kubov.simplechat.databinding.ActivitySimpleChatBinding
 import ru.kubov.simplechat.di.root.RootComponent

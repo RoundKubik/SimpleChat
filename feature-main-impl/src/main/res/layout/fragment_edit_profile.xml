@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/frg_edit_profile__iv_avatar"
                 fresco:roundBottomEnd="true"
                 fresco:roundTopEnd="true"
