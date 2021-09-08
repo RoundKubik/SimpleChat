@@ -13,6 +13,23 @@
         <item name="android:textColor">@color/main_text_color</item>
     </style>
 
+
+    <style name="TextView.DialogMain" parent="TextView.Main">
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">@dimen/dp_2</item>
+        <item name="android:padding">@dimen/dp_16</item>
+    </style>
+
+    <style name="TextView.DialogMainError" parent="TextView.DialogMain">
+        <item name="android:textColor">@color/error_text_color</item>
+    </style>
+
+    <style name="TextView.DialogTitle" parent="TextView.Main">
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">@dimen/dp_2</item>
+        <item name="android:padding">@dimen/dp_16</item>
+    </style>
+
     <style name="TextView.DefaultListItem" parent="TextView.Main">
         <item name="android:background">?selectableItemBackgroundBorderless</item>
         <item name="android:padding">@dimen/dp_16</item>
@@ -52,4 +69,23 @@
         <item name="android:maxLines">1</item>
         <item name="android:textColor">@color/main_text_color</item>
     </style>
+
+
+    <style name="Dialog.SheetDialogTheme" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/SheetDialogAnimation</item>
+        <item name="android:windowSoftInputMode">stateUnchanged</item>
+    </style>
+
+    <style name="SheetDialogAnimation">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
 </resources>

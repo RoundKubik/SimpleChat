@@ -14,4 +14,14 @@
 
     <string name="clear_images_cache">Очистить кэш изображений</string>
     <string name="settings_storage_and_data">Настройки данных и хранилища</string>
+
+    <string name="dialog_logout_title">Вы точно хотите выйти из профиля?</string>
+    <string name="exit">Выйти</string>
+    <string name="cancel">Отмена</string>
+
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+    <string name="light_theme">Свтелая</string>
+    <string name="dark_theme">Тёмная</string>
 </resources>

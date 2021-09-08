@@ -4,8 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import ru.kubov.core_utils.databinding.DialogDoubleChoiseBinding
+import ru.kubov.core_utils.extensions.setDebounceClickListener
+import ru.kubov.core_utils.presentation.view.SheetDialog
 import ru.kubov.feature_profile_impl.R
 import ru.kubov.feature_profile_impl.databinding.FragmentProfileBinding
 import ru.kubov.feature_profile_impl.databinding.IncludeProfileMenuOptionBinding
@@ -42,6 +46,54 @@ class ProfileFragment : Fragment() {
     private var _includeLogoutBinding: IncludeProfileMenuOptionBinding? = null
     private val includeLogoutBinding get() = _includeLogoutBinding!!
 
+    private val logoutDialog by lazy {
+
+        val contentViewBinding = DialogDoubleChoiseBinding.inflate(LayoutInflater.from(requireContext()))
+        contentViewBinding.frgDialogDoubleChoiceTvTitle.text = getString(R.string.exit_from_profile)
+        contentViewBinding.frgDialogDoubleChoiceTvOk.text = getString(R.string.exit)
+        contentViewBinding.frgDialogDoubleChoiceTvOk.setTextColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.error_text_color
+            )
+        )
+
+        val dialog = SheetDialog(
+            requireContext(),
+            contentViewBinding.root
+        )
+        contentViewBinding.frgDialogDoubleChoiceTvOk.setDebounceClickListener {
+            onLogout()
+            dialog.animatedDismiss()
+        }
+        contentViewBinding.frgDialogDoubleChoiceTvCancel.setDebounceClickListener {
+            dialog.animatedDismiss()
+        }
+        return@lazy dialog
+    }
+
+    private val settingsThemeDialog by lazy {
+
+        val contentViewBinding = DialogDoubleChoiseBinding.inflate(LayoutInflater.from(requireContext()))
+        contentViewBinding.frgDialogDoubleChoiceTvTitle.text = getString(R.string.theme)
+        contentViewBinding.frgDialogDoubleChoiceTvOk.text = getString(R.string.light_theme)
+        contentViewBinding.frgDialogDoubleChoiceTvCancel.text = getString(R.string.dark_theme)
+
+        val dialog = SheetDialog(
+            requireContext(),
+            contentViewBinding.root
+        )
+        contentViewBinding.frgDialogDoubleChoiceTvOk.setDebounceClickListener {
+            setLightTheme()
+            dialog.animatedDismiss()
+        }
+        contentViewBinding.frgDialogDoubleChoiceTvCancel.setDebounceClickListener {
+            setDarkTheme()
+            dialog.animatedDismiss()
+        }
+        return@lazy dialog
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         inject()
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -60,23 +112,62 @@ class ProfileFragment : Fragment() {
     }
 
     private fun initMenuOptions() {
-        includeEditProfileBinding.includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_edit_24)
-        includeEditProfileBinding.includeProfileMenuOptionsTvTitle.text = getString(R.string.edit_profile)
+        with(includeEditProfileBinding) {
+            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_edit_24)
+            includeProfileMenuOptionsTvTitle.text = getString(R.string.edit_profile)
 
-        includeThemeBinding.includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_choice_theme_24)
-        includeThemeBinding.includeProfileMenuOptionsTvTitle.text = getString(R.string.theme)
+            root.setDebounceClickListener {
 
-        includeDataAndStorageBinding.includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_data_24)
-        includeDataAndStorageBinding.includeProfileMenuOptionsTvTitle.text = getString(R.string.data_and_storage)
+            }
+        }
 
-        includeLogoutBinding.includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_door_24)
-        includeLogoutBinding.includeProfileMenuOptionsTvTitle.text = getString(R.string.exit_from_profile)
+        with(includeThemeBinding) {
+            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_choice_theme_24)
+            includeProfileMenuOptionsTvTitle.text = getString(R.string.theme)
+
+            root.setDebounceClickListener {
+                settingsThemeDialog.show()
+            }
+        }
+
+        with(includeDataAndStorageBinding) {
+            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_data_24)
+            includeProfileMenuOptionsTvTitle.text = getString(R.string.data_and_storage)
+
+            root.setDebounceClickListener {
+
+            }
+        }
+
+        with(includeLogoutBinding) {
+            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_door_24)
+            includeProfileMenuOptionsTvTitle.text = getString(R.string.exit_from_profile)
+
+            root.setDebounceClickListener {
+                logoutDialog.show()
+            }
+        }
     }
 
     private fun subscribe() {
         /*viewModel.profile.observe(this.viewLifecycleOwner) {
 
         }*/
+    }
+
+    // TODO: 08.09.2021 implement logout logic 
+    private fun onLogout() {
+
+    }
+
+    // TODO: 08.09.2021 implement light theme settings 
+    private fun setLightTheme() {
+
+    }
+
+    // TODO: 08.09.2021 implement dark theme settings
+    private fun setDarkTheme() {
+
     }
 
     private fun inject() {

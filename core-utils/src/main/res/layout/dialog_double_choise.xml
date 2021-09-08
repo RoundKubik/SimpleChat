@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background_primary"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/frg_dialog_double_choice__tv_title"
+        style="@style/TextView.DialogTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dialog_logout_title" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/divider" />
+
+    <View
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_16" />
+
+    <TextView
+        android:id="@+id/frg_dialog_double_choice__tv_ok"
+        style="@style/TextView.DialogMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/exit" />
+
+    <TextView
+        android:id="@+id/frg_dialog_double_choice__tv_cancel"
+        style="@style/TextView.DialogMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel" />
+
+    <Space
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_16" />
+
+</LinearLayout>
