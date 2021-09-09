@@ -26,5 +26,10 @@ object MainFeatureComponentHolder : ComponentHolder<MainFeatureApi, MainFeatureD
             .create(mainFeatureRouter, mainFeatureDependencies)
     }
 
+    override fun reset() {
+        mainFeatureRouter = null
+        super.reset()
+    }
+
 }
 
