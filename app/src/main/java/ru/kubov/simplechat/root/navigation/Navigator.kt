@@ -3,7 +3,7 @@ package ru.kubov.simplechat.root.navigation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import ru.kubov.feature_main_api.navigation.MainRouter
+import ru.kubov.feature_main_api.navigation.MainFeatureRouter
 import ru.kubov.simplechat.R
 import javax.inject.Inject
 
@@ -11,7 +11,7 @@ import javax.inject.Inject
 /**
  * Entity implements navigation between, fragments
  */
-class Navigator @Inject constructor() : MainRouter {
+class Navigator @Inject constructor() : MainFeatureRouter {
 
     private companion object {
         private val TAG = Navigator::class.simpleName
@@ -73,10 +73,12 @@ class Navigator @Inject constructor() : MainRouter {
     }
 
     override fun openEditProfileScreen() {
-        TODO("Not yet implemented")
+        lastUsedNavController = navController
+        navController?.navigate(R.id.editProfileFragment)
     }
 
-    override fun openSettingsThemeScreen() {
-        TODO("Not yet implemented")
+    override fun openSettingsStorageAndData() {
+        lastUsedNavController = navController
+        navController?.navigate(R.id.settingsDataAndStorageFragment)
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
 import ru.kubov.simplechat.R
 import ru.kubov.simplechat.databinding.ActivitySimpleChatBinding
 import ru.kubov.simplechat.di.root.RootComponent
@@ -47,6 +48,7 @@ class SimpleChatActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         inject()
+        initDeps()
         _binding = ActivitySimpleChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
     }
@@ -74,5 +76,9 @@ class SimpleChatActivity : AppCompatActivity() {
             .simpleChatActivityComponentFactory()
             .create(this)
             .inject(this)
+    }
+
+    private fun initDeps() {
+        MainFeatureComponentHolder.initWithMainFeatureRouter(navigatior)
     }
 }

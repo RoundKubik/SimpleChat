@@ -8,6 +8,7 @@ import dagger.Provides
 import dagger.multibindings.IntoMap
 import ru.kubov.core_utils.presentation.viewmodel.ViewModelKey
 import ru.kubov.core_utils.presentation.viewmodel.ViewModelModule
+import ru.kubov.feature_main_api.navigation.MainFeatureRouter
 import ru.kubov.feature_main_impl.presentation.edit_profile.EditProfileViewModel
 import ru.kubov.feature_main_impl.presentation.profile.ProfileViewModel
 
@@ -20,8 +21,9 @@ class EditProfileModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel::class)
     fun provideViewModel(
+        router: MainFeatureRouter?
     ): ViewModel {
-        return EditProfileViewModel()
+        return EditProfileViewModel(router)
     }
 
     @Provides

@@ -16,7 +16,6 @@ import ru.kubov.core_utils.presentation.view.SheetDialog
 import ru.kubov.feature_main_impl.R
 import com.github.dhaval2404.imagepicker.ImagePicker
 import ru.kubov.core_utils.extensions.showImage
-import ru.kubov.feature_main_api.navigation.MainRouter
 import ru.kubov.feature_main_impl.databinding.FragmentProfileBinding
 import ru.kubov.feature_main_impl.databinding.IncludeProfileMenuOptionBinding
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponent
@@ -33,9 +32,6 @@ class ProfileFragment : Fragment() {
         // TODO: 07.09.2021 make bundle for navigation
         fun makeBundle() = bundleOf()
     }
-
-    @Inject
-    lateinit var navigator: MainRouter
 
     @Inject
     lateinit var viewModel: ProfileViewModel
@@ -138,7 +134,7 @@ class ProfileFragment : Fragment() {
             includeProfileMenuOptionsTvTitle.text = getString(R.string.edit_profile)
 
             root.setDebounceClickListener {
-
+                viewModel.openEditProfileScreen()
             }
         }
 
@@ -156,7 +152,7 @@ class ProfileFragment : Fragment() {
             includeProfileMenuOptionsTvTitle.text = getString(R.string.data_and_storage)
 
             root.setDebounceClickListener {
-
+                viewModel.openSettingsStorageAndDataScreen()
             }
         }
 
