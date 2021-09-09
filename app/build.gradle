@@ -40,6 +40,10 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":core-utils")
+    implementation project(":core-db-api")
+    implementation project(":core-db-impl")
+    implementation project(":core-network-api")
+    implementation project(":core-network-impl")
     implementation project(":feature-main-api")
     implementation project(":feature-main-impl")
     implementation project(":module-injection")

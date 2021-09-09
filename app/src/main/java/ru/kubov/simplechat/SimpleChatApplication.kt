@@ -42,7 +42,6 @@ class SimpleChatApplication : Application() {
      */
     private fun initDeps() {
         RootComponentHolder.init()
-        MainFeatureComponentHolder.init()
     }
 
     private fun initExternalLibraries() {

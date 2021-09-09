@@ -20,7 +20,6 @@ import ru.kubov.feature_main_impl.databinding.FragmentProfileBinding
 import ru.kubov.feature_main_impl.databinding.IncludeProfileMenuOptionBinding
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponent
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
-import ru.kubov.feature_main_api.navigation.MainRouter
 import javax.inject.Inject
 
 
@@ -36,9 +35,6 @@ class ProfileFragment : Fragment() {
 
     @Inject
     lateinit var viewModel: ProfileViewModel
-
-    /*@Inject
-    lateinit var router: MainRouter*/
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -138,7 +134,7 @@ class ProfileFragment : Fragment() {
             includeProfileMenuOptionsTvTitle.text = getString(R.string.edit_profile)
 
             root.setDebounceClickListener {
-               // viewModel.openEditProfileFragment()
+                viewModel.openEditProfileScreen()
             }
         }
 
@@ -156,7 +152,7 @@ class ProfileFragment : Fragment() {
             includeProfileMenuOptionsTvTitle.text = getString(R.string.data_and_storage)
 
             root.setDebounceClickListener {
-
+                viewModel.openSettingsStorageAndDataScreen()
             }
         }
 

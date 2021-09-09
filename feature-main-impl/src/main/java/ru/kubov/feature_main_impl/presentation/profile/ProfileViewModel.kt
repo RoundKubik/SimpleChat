@@ -1,29 +1,33 @@
 package ru.kubov.feature_main_impl.presentation.profile
 
 import androidx.lifecycle.ViewModel
-import ru.kubov.core_utils.domain.Profile
+import ru.kubov.feature_main_api.navigation.MainFeatureRouter
 import javax.inject.Inject
 
 /**
  * Class provides editing profile and show information about current user
  */
-class ProfileViewModel @Inject constructor() : ViewModel() {
-/*
-    @Inject
-    lateinit var router: MainRouter
+class ProfileViewModel @Inject constructor(
+    private val router: MainFeatureRouter?
+) : ViewModel() {
 
-    fun back() {
-        router.back()
+    /**
+     * Navigation to edit profile screen by call router method [MainFeatureRouter.openEditProfileScreen]
+     *
+     * @see MainFeatureRouter
+     */
+    fun openEditProfileScreen() {
+        router?.openEditProfileScreen()
     }
 
-    fun openEditProfileFragment() {
-        router.openEditProfileFragment()
-    }*/
-    //remove [lateinit] to private
     /**
-     * Provides profile info see model [Profile]
+     * Navigation to settings storage and data  screen by call router method [MainFeatureRouter.openSettingsStorageAndData]
+     *
+     * @see MainFeatureRouter
      */
-    /* lateinit var _profile : MutableLiveData<Profile>
-     val  profile : LiveData<Profile> get() = _profile*/
+    fun openSettingsStorageAndDataScreen() {
+        router?.openSettingsStorageAndData()
+    }
+
 
 }
