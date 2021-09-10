@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.presentation.view.StyledToastSimpleChat
@@ -47,7 +48,7 @@ class SettingsDataAndStorageFragment : Fragment() {
 
     private fun clearImageData() {
         viewModel.clearImageData()
-        StyledToastSimpleChat.makeToast(requireContext(), getString(R.string.images_cache_cleared))
+        StyledToastSimpleChat.makeToast(requireContext(), getString(R.string.images_cache_cleared)).show()
     }
 
     private fun initToolbar() {

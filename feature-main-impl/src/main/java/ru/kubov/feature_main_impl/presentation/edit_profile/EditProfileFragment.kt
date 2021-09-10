@@ -66,7 +66,7 @@ class EditProfileFragment : Fragment() {
 
         includeBaseToolbarBinding.includeBaseToolbarTvTitle.text = getString(R.string.edit_profile)
         includeBaseToolbarBinding.includeBaseToolbarIvIconBack.setDebounceClickListener {
-            //viewModel.back()
+            viewModel.back()
         }
     }
 

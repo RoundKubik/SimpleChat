@@ -8,11 +8,6 @@ import ru.kubov.module_injection.holder.ComponentHolder
 object MainFeatureComponentHolder : ComponentHolder<MainFeatureApi, MainFeatureDependencies>() {
 
     private var mainFeatureRouter: MainFeatureRouter? = null
-
-    fun initMainFeatureRouter(mainFeatureRouter: MainFeatureRouter?) {
-        this.mainFeatureRouter = mainFeatureRouter
-    }
-
     fun initWithMainFeatureRouter(mainFeatureRouter: MainFeatureRouter?) {
         this.mainFeatureRouter = mainFeatureRouter
         init()
