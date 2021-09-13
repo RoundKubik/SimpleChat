@@ -29,4 +29,6 @@
     <string name="images_cache_cleared">Кэш изображений успешно очищен</string>
 
     <string name="type_message">Введите сообщение…</string>
+    <string name="new_messages">Новые сообщения</string>
+    <string name="error_sending_message">Ошибка отправки сообщения</string>
 </resources>

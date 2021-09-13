@@ -50,7 +50,6 @@ class SheetDialog(
         window!!.addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
         window!!.setDimAmount(0.0f)
 
-        // region initialize layout
         _binding = DialogSheetBinding.inflate(LayoutInflater.from(context))
         binding.dialogSheetClCoordinatorLayout.setOnTouchListener { _, event ->
             if (event.action == MotionEvent.ACTION_DOWN && !isShowHideAnimatorRunning()) {

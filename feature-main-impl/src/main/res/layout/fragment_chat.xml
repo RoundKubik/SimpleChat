@@ -11,10 +11,15 @@
         android:id="@+id/frg_chat__rv_messages"
         style="@style/VerticalScrollbars"
         android:layout_width="match_parent"
-        android:layout_below="@id/frg_chat__layout_toolbar"
         android:layout_height="match_parent"
+        android:layout_above="@id/frg_chat__ci_message_input"
+        android:layout_below="@id/frg_chat__layout_toolbar"
         android:visibility="visible" />
 
-    <
+    <ru.kubov.core_utils.presentation.view.ChatInputView
+        android:id="@+id/frg_chat__ci_message_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

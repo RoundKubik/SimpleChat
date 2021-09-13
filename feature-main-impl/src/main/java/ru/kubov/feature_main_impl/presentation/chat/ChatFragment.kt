@@ -22,7 +22,7 @@ class ChatFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentChatBinding.inflate(inflater, container, false)
-        _includeChatToolbarBinding = IncludeBaseToolbarBinding.bind()
+        _includeChatToolbarBinding = IncludeBaseToolbarBinding.bind(binding.frgChatLayoutToolbar.root)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 

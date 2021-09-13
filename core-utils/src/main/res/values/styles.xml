@@ -60,6 +60,17 @@
         <item name="android:textSize">@dimen/sp_24</item>
     </style>
 
+    <style name="TextView.LeftCentred" parent="TextView.Main">
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.LeftCentred.SmallBold" parent="TextView.LeftCentred">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/sp_13</item>
+    </style>
+
     <style name="ToolbarStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_56</item>

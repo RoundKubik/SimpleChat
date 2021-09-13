@@ -11,7 +11,10 @@
     <color name="background_secondary">#FEFBF3</color>
     <color name="error_text_color">#911F27</color>
 
+    <color name="icon_primary">#122620</color>
+
     <color name="overlay_sheet_dialog">#000000</color>
 
     <color name="background_toast_color">#000000</color>
+    <color name="highlight_color">#19FFBE00</color>
 </resources>
