@@ -1,6 +1,7 @@
 package ru.kubov.feature_main_impl.presentation.chat.adapter
 
 import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,76 +9,72 @@ import android.view.ViewGroup
 import androidx.core.animation.addListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.internal.ViewUtils.dpToPx
 import ru.kubov.core_utils.domain.models.Message
+import ru.kubov.core_utils.extensions.dpToPx
+import ru.kubov.core_utils.presentation.view.message.AbstractMessageView
+import ru.kubov.core_utils.presentation.view.message.ImageMessageView
+import ru.kubov.core_utils.presentation.view.message.TextMessageView
+import ru.kubov.feature_main_impl.R
 import kotlin.math.roundToInt
 
 // TODO: Extend and implement adapter for channels
 
 /** Adapter for list of messages. */
+// TODO: 13.09.2021 split and add documentation
+// TODO: 13.09.2021 in next versions extends to supporting of channels or comments of messages like thread in twitter
 class MessagesAdapter(
     context: Context,
     private val messageListener: AbstractMessageView.Listener,
-    private val pageListener: PageListener,
-    textStylerListener: TextStyler.Listener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private val pageListener: PageListener
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    // TODO: 13.09.2021 add documentation
     interface PageListener {
         fun onLoadAbove()
         fun onLoadBelow()
         fun onMessageBinded(message: Message)
     }
 
+    // TODO: 13.09.2021  add documentation
     sealed class Payload {
         object Highlight : Payload()
         data class CanSendMessages(val can: Boolean) : Payload()
     }
 
+    // TODO: 13.09.2021 add documentation on this constants
     companion object {
         private const val TYPE_LOADER = 0
         private const val TYPE_MESSAGE_TEXT = 2
         private const val TYPE_MESSAGE_TEXT_AUTHOR = 3
-        private const val TYPE_MESSAGE_STICKER = 4
-        private const val TYPE_MESSAGE_STICKER_AUTHOR = 5
-        private const val TYPE_MESSAGE_IMAGE_GIF = 6
-        private const val TYPE_MESSAGE_IMAGE_GIF_AUTHOR = 7
         private const val TYPE_MESSAGE_FORWARDED = 8
         private const val TYPE_MESSAGE_FORWARDED_AUTHOR = 9
         private const val TYPE_MESSAGE_UNSUPPORTED = 10
         private const val TYPE_MESSAGE_UNSUPPORTED_AUTHOR = 11
-        private const val TYPE_CHANNEL_MESSAGE_TEXT = 12
-        private const val TYPE_CHANNEL_MESSAGE_TEXT_AUTHOR = 13
-        private const val TYPE_CHANNEL_MESSAGE_STICKER = 14
-        private const val TYPE_CHANNEL_MESSAGE_STICKER_AUTHOR = 15
-        private const val TYPE_CHANNEL_MESSAGE_IMAGE_GIF = 16
-        private const val TYPE_CHANNEL_MESSAGE_IMAGE_GIF_AUTHOR = 17
-        private const val TYPE_CHANNEL_MESSAGE_FORWARDED = 18
-        private const val TYPE_CHANNEL_MESSAGE_FORWARDED_AUTHOR = 19
-        private const val TYPE_CHANNEL_MESSAGE_UNSUPPORTED = 20
-        private const val TYPE_CHANNEL_MESSAGE_UNSUPPORTED_AUTHOR = 21
 
         private const val SAME_GROUP_MAX_TIME_MS = 120_000L
     }
 
-
-    // region properties
-
     private val messageViewFactory = MessageViewFactory(context, messageListener, textStylerListener)
 
-    private val highlightAnimMap: MutableMap<Long, ValueAnimator> = HashMap() // message id / mills anim
+    private val highlightAnimMap: MutableMap<Long, ValueAnimator> = HashMap()
 
 
-    fun updateChatConfig(isChannel: Boolean, showStartThread: Boolean) {
-        var changed = false
-        if (this.isChannel != isChannel) {
-            this.isChannel = isChannel
-            changed = true
-        }
-        if (this.showStartThread != showStartThread) {
-            this.showStartThread = showStartThread
-            changed = true
-        }
-        if (changed) notifyDataSetChanged()
-    }
+    // TODO: 13.09.2021 delete
+    /* fun updateChatConfig(isChannel: Boolean, showStartThread: Boolean) {
+         var changed = false
+         if (this.isChannel != isChannel) {
+             this.isChannel = isChannel
+             changed = true
+         }
+         if (this.showStartThread != showStartThread) {
+             this.showStartThread = showStartThread
+             changed = true
+         }
+         if (changed) notifyDataSetChanged()
+     }*/
 
+    // TODO: 13.09.2021 delete
     var isChannel: Boolean = false
         private set
 
@@ -166,9 +163,11 @@ class MessagesAdapter(
                     holder.messageView.updateExtraMargins(firstInGroup = true, lastInGroup = true)
                 }
                 // bind message
-                Record.debug("#GIFF MessageAdapter.onBindViewHolder: view = ${holder.messageView::class.java}, " +
-                        "position = $position, messageId = ${message.id}, isLocal = ${message.isLocal}, " +
-                        "gif = ${message.gif}")
+                Record.debug(
+                    "#GIFF MessageAdapter.onBindViewHolder: view = ${holder.messageView::class.java}, " +
+                            "position = $position, messageId = ${message.id}, isLocal = ${message.isLocal}, " +
+                            "gif = ${message.gif}"
+                )
                 holder.bindMessage(message, canSendMessages)
                 // update animation
                 val anim = highlightAnimMap[message.id]
@@ -355,59 +354,94 @@ class MessagesAdapter(
     // endregion
 
 
-    private class MessageViewFactory(private val context: Context,
-                                     private val messageListener: AbstractMessageView.Listener,
-                                     private val textStylerListener: TextStyler.Listener) {
+    // TODO: 13.09.2021 remove from messages adapter in other class maybe
+    // Add documentation
+    private class MessageViewFactory(
+        private val context: Context,
+        private val messageListener: AbstractMessageView.Listener
+    ) {
 
-        private val chatMessageLeftMargin = context.resources.getDimension(R.dimen.chat_message_content_margin_left).roundToInt()
-        private val channelMessageLeftMargin = context.resources.getDimension(R.dimen.channel_message_content_margin_left).roundToInt()
-        private val messageRightMargin = context.resources.getDimension(R.dimen.message_margin_right).roundToInt()
+        private val chatMessageLeftMargin = context.dpToPx(64)
+        private val messageRightMargin = context.dpToPx(12)
         private val channelLastMarginBottom = context.dpToPx(10)
 
         fun createView(viewType: Int): AbstractMessageView<*> {
             val messageView = when (viewType) {
-                TYPE_MESSAGE_TEXT -> TextMessageView(context, chatMessageLeftMargin,
-                    messageRightMargin, 0, messageListener, textStylerListener)
-                TYPE_MESSAGE_TEXT_AUTHOR -> ChatTextMessageView(context, messageListener,
-                    textStylerListener)
-                TYPE_MESSAGE_STICKER -> StickerMessageView(context, chatMessageLeftMargin,
-                    messageRightMargin, 0, messageListener)
-                TYPE_MESSAGE_STICKER_AUTHOR -> ChatStickerMessageView(context, messageListener)
-                TYPE_MESSAGE_IMAGE_GIF -> ImageTextMessageView(context, chatMessageLeftMargin,
-                    messageRightMargin, 0, messageListener, textStylerListener)
-                TYPE_MESSAGE_IMAGE_GIF_AUTHOR -> ChatImageTextMessageView(context, messageListener,
-                    textStylerListener)
-                TYPE_MESSAGE_FORWARDED -> ForwardedMessageView(context, chatMessageLeftMargin,
-                    messageRightMargin, 0, messageListener, textStylerListener)
-                TYPE_MESSAGE_FORWARDED_AUTHOR -> ChatForwardedMessageView(context, messageListener,
-                    textStylerListener)
-                TYPE_MESSAGE_UNSUPPORTED -> UnsupportedMessageView(context, chatMessageLeftMargin,
-                    messageRightMargin, 0, messageListener, textStylerListener)
-                TYPE_MESSAGE_UNSUPPORTED_AUTHOR -> ChatUnsupportedMessageView(context, messageListener,
-                    textStylerListener)
-                TYPE_CHANNEL_MESSAGE_TEXT -> TextMessageView(context, channelMessageLeftMargin,
-                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener)
-                TYPE_CHANNEL_MESSAGE_TEXT_AUTHOR -> ChannelTextMessageView(context, messageListener,
-                    textStylerListener)
-                TYPE_CHANNEL_MESSAGE_STICKER -> StickerMessageView(context, channelMessageLeftMargin,
-                    messageRightMargin, channelLastMarginBottom, messageListener)
+                TYPE_MESSAGE_TEXT -> TextMessageView(
+                    context, chatMessageLeftMargin,
+                    messageRightMargin, 0, messageListener
+                )
+                TYPE_MESSAGE_TEXT_AUTHOR -> ChatTextMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
+                TYPE_MESSAGE_IMAGE_GIF -> ImageMessageView(
+                    context, chatMessageLeftMargin,
+                    messageRightMargin, 0, messageListener, textStylerListener
+                )
+                TYPE_MESSAGE_IMAGE_GIF_AUTHOR -> ChatImageTextMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
+                TYPE_MESSAGE_FORWARDED -> ForwardedMessageView(
+                    context, chatMessageLeftMargin,
+                    messageRightMargin, 0, messageListener, textStylerListener
+                )
+                TYPE_MESSAGE_FORWARDED_AUTHOR -> ChatForwardedMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
+                TYPE_MESSAGE_UNSUPPORTED -> UnsupportedMessageView(
+                    context, chatMessageLeftMargin,
+                    messageRightMargin, 0, messageListener, textStylerListener
+                )
+                TYPE_MESSAGE_UNSUPPORTED_AUTHOR -> ChatUnsupportedMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_TEXT -> TextMessageView(
+                    context, channelMessageLeftMargin,
+                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_TEXT_AUTHOR -> ChannelTextMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_STICKER -> StickerMessageView(
+                    context, channelMessageLeftMargin,
+                    messageRightMargin, channelLastMarginBottom, messageListener
+                )
                 TYPE_CHANNEL_MESSAGE_STICKER_AUTHOR -> ChannelStickerMessageView(context, messageListener)
-                TYPE_CHANNEL_MESSAGE_IMAGE_GIF -> ImageTextMessageView(context, channelMessageLeftMargin,
-                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener)
-                TYPE_CHANNEL_MESSAGE_IMAGE_GIF_AUTHOR -> ChannelImageTextMessageView(context, messageListener,
-                    textStylerListener)
-                TYPE_CHANNEL_MESSAGE_FORWARDED -> ForwardedMessageView(context, channelMessageLeftMargin,
-                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener)
-                TYPE_CHANNEL_MESSAGE_FORWARDED_AUTHOR -> ChannelForwardedMessageView(context,
-                    messageListener, textStylerListener)
-                TYPE_CHANNEL_MESSAGE_UNSUPPORTED -> UnsupportedMessageView(context, channelMessageLeftMargin,
-                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener)
-                TYPE_CHANNEL_MESSAGE_UNSUPPORTED_AUTHOR -> ChannelUnsupportedMessageView(context, messageListener,
-                    textStylerListener)
+                TYPE_CHANNEL_MESSAGE_IMAGE_GIF -> ImageTextMessageView(
+                    context, channelMessageLeftMargin,
+                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_IMAGE_GIF_AUTHOR -> ChannelImageTextMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_FORWARDED -> ForwardedMessageView(
+                    context, channelMessageLeftMargin,
+                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_FORWARDED_AUTHOR -> ChannelForwardedMessageView(
+                    context,
+                    messageListener, textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_UNSUPPORTED -> UnsupportedMessageView(
+                    context, channelMessageLeftMargin,
+                    messageRightMargin, channelLastMarginBottom, messageListener, textStylerListener
+                )
+                TYPE_CHANNEL_MESSAGE_UNSUPPORTED_AUTHOR -> ChannelUnsupportedMessageView(
+                    context, messageListener,
+                    textStylerListener
+                )
                 else -> throw IllegalArgumentException("Not supported viewType value: $viewType")
             }
-            messageView.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT)
+            messageView.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            )
             return messageView
         }
 

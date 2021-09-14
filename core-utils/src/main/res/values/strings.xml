@@ -31,4 +31,5 @@
     <string name="type_message">Введите сообщение…</string>
     <string name="new_messages">Новые сообщения</string>
     <string name="error_sending_message">Ошибка отправки сообщения</string>
+    <string name="forwarded_message">Пересланное сообщение</string>
 </resources>

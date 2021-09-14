@@ -1,8 +1,9 @@
 package ru.kubov.core_utils.extensions
 
+import android.content.Context
 import android.util.TypedValue
-import android.view.View
 import kotlin.math.roundToInt
 
-fun View.dpToPx(dp: Int): Int =
+// TODO: 13.09.2021 add documentation
+fun Context.dpToPx(dp: Int) =
     TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics).roundToInt()
