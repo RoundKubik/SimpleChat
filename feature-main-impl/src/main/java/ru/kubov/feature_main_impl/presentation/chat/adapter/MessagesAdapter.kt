@@ -1,7 +1,6 @@
 package ru.kubov.feature_main_impl.presentation.chat.adapter
 
 import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +8,12 @@ import android.view.ViewGroup
 import androidx.core.animation.addListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.internal.ViewUtils.dpToPx
 import ru.kubov.core_utils.domain.models.Message
 import ru.kubov.core_utils.extensions.dpToPx
-import ru.kubov.core_utils.presentation.view.message.AbstractMessageView
+import ru.kubov.core_utils.presentation.view.message.ContainerMessageView
 import ru.kubov.core_utils.presentation.view.message.ImageMessageView
 import ru.kubov.core_utils.presentation.view.message.TextMessageView
 import ru.kubov.feature_main_impl.R
-import kotlin.math.roundToInt
 
 // TODO: Extend and implement adapter for channels
 
@@ -25,7 +22,7 @@ import kotlin.math.roundToInt
 // TODO: 13.09.2021 in next versions extends to supporting of channels or comments of messages like thread in twitter
 class MessagesAdapter(
     context: Context,
-    private val messageListener: AbstractMessageView.Listener,
+    private val messageListener: ContainerMessageView.Listener,
     private val pageListener: PageListener
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -75,9 +72,9 @@ class MessagesAdapter(
      }*/
 
     // TODO: 13.09.2021 delete
-    var isChannel: Boolean = false
+   /* var isChannel: Boolean = false
         private set
-
+*/
     private var showStartThread: Boolean = false
 
     var canSendMessages: Boolean = false
@@ -249,7 +246,7 @@ class MessagesAdapter(
         val prevMessage = if (position < messagesCount - 1) getItem(position + 1) else null
         return prevMessage == null ||
                 message.id == firstUnreadMessageId || // message has 'New messages' title
-                message.author.userId != prevMessage.author.userId || // previous message from another author
+                message.messageAuthor.userId != prevMessage.messageAuthor.userId || // previous message from another author
                 (message.date.time - prevMessage.date.time) > SAME_GROUP_MAX_TIME_MS // enough time passed
     }
 
@@ -258,7 +255,7 @@ class MessagesAdapter(
         val nextMessage = if (position > 0) getItem(position - 1) else null
         return nextMessage == null ||
                 nextMessage.id == firstUnreadMessageId || // next message has 'New messages' title
-                message.author.userId != nextMessage.author.userId || // next message from another author
+                message.messageAuthor.userId != nextMessage.messageAuthor.userId || // next message from another author
                 (nextMessage.date.time - message.date.time) > SAME_GROUP_MAX_TIME_MS // enough time passed
     }
 
@@ -279,7 +276,7 @@ class MessagesAdapter(
         if (highlightAnimMap[messageId] != null) return
 
         ValueAnimator.ofInt(0, 0).apply {
-            duration = AbstractMessageView.HIGHLIGHT_ANIM_DURATION_MS
+            duration = ContainerMessageView.HIGHLIGHT_ANIM_DURATION_MS
             addListener(
                 onStart = { highlightAnimMap[messageId] = this@apply },
                 onEnd = { highlightAnimMap.remove(messageId) })
@@ -296,7 +293,7 @@ class MessagesAdapter(
 
     // region view holders
 
-    inner class NewMessageViewHolder(val messageView: AbstractMessageView<*>) : RecyclerView.ViewHolder(messageView) {
+    inner class NewMessageViewHolder(val messageView: ContainerMessageView<*>) : RecyclerView.ViewHolder(messageView) {
 
         var chatId: Long? = null
             private set
@@ -358,14 +355,14 @@ class MessagesAdapter(
     // Add documentation
     private class MessageViewFactory(
         private val context: Context,
-        private val messageListener: AbstractMessageView.Listener
+        private val messageListener: ContainerMessageView.Listener
     ) {
 
         private val chatMessageLeftMargin = context.dpToPx(64)
         private val messageRightMargin = context.dpToPx(12)
         private val channelLastMarginBottom = context.dpToPx(10)
 
-        fun createView(viewType: Int): AbstractMessageView<*> {
+        fun createView(viewType: Int): ContainerMessageView<*> {
             val messageView = when (viewType) {
                 TYPE_MESSAGE_TEXT -> TextMessageView(
                     context, chatMessageLeftMargin,

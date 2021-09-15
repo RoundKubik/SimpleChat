@@ -50,4 +50,5 @@ dependencies {
 
     implementation frescoDep
     implementation lottieDep
+    implementation jodaTimeDep
 }

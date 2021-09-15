@@ -66,11 +66,11 @@ class MessageReplyView : FrameLayout {
     fun showMessage(message: Message) {
         val hasImage = message.messageType in arrayOf(MessageType.SingleImage)
 
-        binding.viewMessageReplyTvAuthor.text = message.userAuthor?.name ?: message.author.name
-        val avatarUrl = if (message.userAuthor != null) {
-            message.userAuthor?.photoUrl
+        binding.viewMessageReplyTvAuthor.text = message.user?.name ?: message.messageAuthor.name
+        val avatarUrl = if (message.user != null) {
+            message.user?.photoUrl
         } else {
-            message.author.photoUrl
+            message.messageAuthor.photoUrl
         }
         binding.viewMessageReplySdvAvatar.showImage(avatarUrl)
         binding.viewMessageReplyTvMessage.updateLayoutParams<LayoutParams> {

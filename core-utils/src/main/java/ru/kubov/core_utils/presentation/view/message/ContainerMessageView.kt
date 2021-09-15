@@ -7,7 +7,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Build
-import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -25,20 +24,17 @@ import ru.kubov.core_utils.domain.models.MessageStatus
 import ru.kubov.core_utils.domain.models.MessageType
 import ru.kubov.core_utils.extensions.*
 import java.util.*
-import kotlin.math.roundToInt
 
 // TODO: 12.09.2021 made more flexible to parse properties from xml file
 // change constructor to make more flexible
 @SuppressLint("ViewConstructor")
-abstract class AbstractMessageView<CV : View>(
+abstract class ContainerMessageView<CV : View>(
     context: Context,
-    protected val messageContentView: CV,
-    contentLayoutParams: LayoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT),
-    attachmentMarginLeft: Int,
-    attachmentMarginRight: Int,
-    private val firstInGroupMarginTop: Int = 0,
-    private val lastInGroupMarginBottom: Int = 0,
-    hasNewMessagesTitle: Boolean = true,
+    private val messageContentView: CV,
+    private val contentLayoutParams: LayoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT),
+    private val attachmentMarginLeft: Int,
+    private val attachmentMarginRight: Int,
+    private val hasNewMessagesTitle: Boolean = true,
     private val listener: Listener?
 ) : LinearLayout(context, null, 0) {
 
@@ -129,7 +125,7 @@ abstract class AbstractMessageView<CV : View>(
                 setTextColor(getColor(R.color.main_text_color))
                 text = context.getString(R.string.new_messages)
                 visibility = View.GONE
-                this@AbstractMessageView.addView(this)
+                this@ContainerMessageView.addView(this)
             }
         }
 
@@ -142,7 +138,7 @@ abstract class AbstractMessageView<CV : View>(
 
             // TODO: 12.09.2021
             // foreground = getDrawable(R.drawable.ripple_message)
-            this@AbstractMessageView.addView(this)
+            this@ContainerMessageView.addView(this)
         }
         _binding = ViewMessagesAttachmentBinding.inflate(LayoutInflater.from(context), layoutContainer, false)
         layoutContainer.addView(binding.root)
@@ -203,22 +199,6 @@ abstract class AbstractMessageView<CV : View>(
         tvNewMessagesHeader?.isVisible = show
     }
 
-    // TODO: 13.09.2021 add documentation
-    fun updateExtraMargins(firstInGroup: Boolean, lastInGroup: Boolean) {
-        val newPaddingTop = if (firstInGroup) {
-            firstInGroupMarginTop
-        } else {
-            0
-        }
-        val newPaddingBottom = if (lastInGroup) {
-            lastInGroupMarginBottom
-        } else {
-            0
-        }
-        if (this.paddingTop != newPaddingTop || this.paddingBottom != newPaddingBottom) {
-            this.setPadding(0, newPaddingTop, 0, newPaddingBottom)
-        }
-    }
 
     // TODO: 13.09.2021 add documentation to showing message
     fun showMessage(message: Message) {

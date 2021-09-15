@@ -17,4 +17,6 @@
 
     <color name="background_toast_color">#000000</color>
     <color name="highlight_color">#19FFBE00</color>
+
+    <color name="pin_online_color">#C5E90B</color>
 </resources>

@@ -37,6 +37,8 @@ buildscript {
         frescoVersion = "2.5.0"
         circleimageviewVersion = '3.1.0'
 
+        jodaTimeVersion = '2.10.10'
+
         kotlinDep = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 
         androidxCoreDep = "androidx.core:core-ktx:$coreVersion"
@@ -81,6 +83,7 @@ buildscript {
         frescoDep = "com.facebook.fresco:fresco:$frescoVersion"
 
         lottieDep = "com.airbnb.android:lottie:$lottieVersion"
+        jodaTimeDep = "joda-time:joda-time:$jodaTimeVersion"
 
     }
     repositories {

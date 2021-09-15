@@ -13,6 +13,10 @@
         <item name="android:textColor">@color/main_text_color</item>
     </style>
 
+    <style name="TextView.Main.Medium" parent="TextView.Main">
+        <item name="android:textSize">@dimen/sp_13</item>
+    </style>
+
     <style name="TextView.Main.Bold" parent="TextView.Main">
         <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
@@ -20,6 +24,10 @@
     <style name="TextView.Secondary.Hint" parent="TextView.Main">
         <item name="android:textSize">@dimen/sp_10</item>
         <item name="android:textColor">@color/hint_text_color</item>
+    </style>
+
+    <style name="TextView.SecondaryMedium.Hint" parent="TextView.Secondary.Hint">
+        <item name="android:textSize">@dimen/sp_13</item>
     </style>
 
     <style name="TextView.MainLight" parent="Widget.AppCompat.TextView">
@@ -97,7 +105,9 @@
         <item name="android:background">@null</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:hint">@string/type_message</item>
-        <item name="android:inputType">text|textAutoComplete|textMultiLine|textAutoCorrect|textCapSentences</item>
+        <item name="android:inputType">
+            text|textAutoComplete|textMultiLine|textAutoCorrect|textCapSentences
+        </item>
         <item name="android:maxLines">5</item>
         <item name="android:minHeight">@dimen/dp_48</item>
         <item name="android:paddingLeft">@dimen/dp_4</item>

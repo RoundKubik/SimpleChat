@@ -10,11 +10,11 @@ data class Message(
     var date: Date,
     var isLocal: Boolean,
     val messageType: MessageType,
-    var author: MessageAuthor,
+    var messageAuthor: MessageAuthor,
     var messageStatus: MessageStatus?,
     var photo: Photo?,
     var forwardedMessageId: ForwardedMessageId?,
-    var userAuthor: User?,
+    var user: User?,
     var quotedMessage: Message?,
     var link: MessageLink?,
     val forwardedMessage: Message?

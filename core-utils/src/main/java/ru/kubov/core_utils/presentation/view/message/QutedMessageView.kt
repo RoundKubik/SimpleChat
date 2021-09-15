@@ -52,7 +52,7 @@ class QuotedChatMessageView : FrameLayout {
         )
         binding.viewMessageReplyTvAuthor.setPaddingRight(paddingRight)
         binding.viewMessageReplyTvMessage.setPaddingRight(paddingRight)
-        binding.viewMessageReplyTvAuthor.text = quotedMessage.userAuthor?.name ?: quotedMessage.author.name
+        binding.viewMessageReplyTvAuthor.text = quotedMessage.user?.name ?: quotedMessage.messageAuthor.name
         binding.viewMessageReplyTvMessage.text = quotedMessage.text
         binding.viewMessageReplySdvReplyImage.isVisible = hasImage
         binding.viewMessageReplySdvReplyImage.showImage(quotedMessage.photo?.uri)
