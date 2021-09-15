@@ -30,8 +30,13 @@ class JodaDateFormatter : DateFormatter {
     }
 
     @SuppressLint("SimpleDateFormat")
-    override fun formatDateToStandardFormat(date: Date): String {
-        val formatter = SimpleDateFormat(DATE_PATTERN)
+    override fun formatDateToStandardFormat(date: Date, withYearFormat: Boolean): String {
+        val format = if (withYearFormat) {
+            YEAR_PATTERN
+        } else {
+            DATE_PATTERN
+        }
+        val formatter = SimpleDateFormat(format)
         return formatter.format(date)
     }
 

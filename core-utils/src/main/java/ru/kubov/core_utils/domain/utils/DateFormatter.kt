@@ -12,5 +12,5 @@ interface DateFormatter {
 
     fun formatDateToWeekDay(context: Context, date: Date): String
 
-    fun formatDateToStandardFormat(date: Date): String
+    fun formatDateToStandardFormat(date: Date, withYearFormat: Boolean = false): String
 }
