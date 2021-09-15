@@ -8,6 +8,7 @@ import android.widget.FrameLayout
 import androidx.core.view.isVisible
 import ru.kubov.core_utils.databinding.ViewContainerLeadMessageContentBinding
 import ru.kubov.core_utils.domain.models.Message
+import ru.kubov.core_utils.domain.utils.DateFormatter
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
 
@@ -16,7 +17,8 @@ import ru.kubov.core_utils.extensions.showImage
 abstract class ContainerLeadTextMessageContentView<CV : View>(
     context: Context,
     private val layoutParams: LayoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT),
-    private val contentView: CV
+    private val contentView: CV,
+    private val dateFormatter: DateFormatter
 ) : FrameLayout(context, null, 0) {
 
     private var _binding: ViewContainerLeadMessageContentBinding? = null
@@ -47,7 +49,10 @@ abstract class ContainerLeadTextMessageContentView<CV : View>(
             viewContainerLeadMessageContentTvAuthor.text = message.user?.name ?: message.messageAuthor.name
             viewContainerLeadMessageContentSdvAvatar.showImage(message.user?.photoUrl ?: message.messageAuthor.photoUrl)
             viewContainerLeadMessageContentTvDate.isVisible = !message.isLocal
-
+            if (!message.isLocal) {
+                binding.viewContainerLeadMessageContentTvDate.text =
+                    dateFormatter.updateDateInMessage(context, message.date)
+            }
         }
         showMessageContent(contentView, message)
     }
