@@ -1,4 +1,4 @@
-package ru.kubov.core_utils.presentation.view.message
+package ru.kubov.core_utils.presentation.view.message.base
 
 import android.animation.AnimatorSet
 import android.animation.ArgbEvaluator

@@ -19,4 +19,9 @@
     <color name="highlight_color">#19FFBE00</color>
 
     <color name="pin_online_color">#C5E90B</color>
+
+    <color name="progress_bar_content_color">#F0D9FF</color>
+    <color name="primary_highlight_color">#189AB4</color>
+
+    <color name="image_placeholder">#FEFBF3</color>
 </resources>

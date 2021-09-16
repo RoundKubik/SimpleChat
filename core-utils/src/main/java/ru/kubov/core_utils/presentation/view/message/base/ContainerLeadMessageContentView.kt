@@ -1,4 +1,4 @@
-package ru.kubov.core_utils.presentation.view.message
+package ru.kubov.core_utils.presentation.view.message.base
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,10 +11,18 @@ import ru.kubov.core_utils.domain.models.Message
 import ru.kubov.core_utils.domain.utils.DateFormatter
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
+import javax.inject.Inject
 
-// TODO: 14.09.2021 add flexible obtaining res from xml
+/**
+ * Class implement behavior of message view that keeps content of message or image
+ *
+ * @param context - context to create view
+ * @param layoutParams - params of [contentView]
+ * @param contentView - view displayed into this message view container
+ * @param dateFormatter - date formatter convert date in native format to human readable format
+ */
 @SuppressLint("ViewConstructor")
-abstract class ContainerLeadTextMessageContentView<CV : View>(
+abstract class ContainerLeadMessageContentView<CV : View>(
     context: Context,
     private val layoutParams: LayoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT),
     private val contentView: CV,
@@ -26,13 +34,25 @@ abstract class ContainerLeadTextMessageContentView<CV : View>(
 
     private var cachedMessage: Message? = null
 
-    abstract fun showMessageContent(contentView: CV, message: Message)
-
     init {
         _binding = ViewContainerLeadMessageContentBinding.inflate(LayoutInflater.from(context), this)
         replaceStubToContentView()
     }
 
+    /**
+     * Abstract method to override showing message in message view container
+     *
+     * @param contentView - message view container
+     * @param message - displayed message
+     */
+    abstract fun showMessageContent(contentView: CV, message: Message)
+
+    /**
+     * Settings click listener on user avatar
+     *
+     * @param onClickListener - listener
+     * implemented by [setDebounceClickListener]
+     */
     fun setOnAuthorClickListener(onClickListener: (Long) -> Unit) {
         binding.viewContainerLeadMessageContentSdvAvatar.setDebounceClickListener {
             cachedMessage?.user?.id?.let {
@@ -41,6 +61,11 @@ abstract class ContainerLeadTextMessageContentView<CV : View>(
         }
     }
 
+    /**
+     * Settings content [Message] of message to view [contentView] and cached it into [cachedMessage]
+     *
+     * @param message - message displaying into view
+     */
     fun showMessage(message: Message) {
         cachedMessage = message
         with(binding) {

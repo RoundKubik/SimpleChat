@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import ru.kubov.core_utils.domain.models.Message
 import ru.kubov.core_utils.extensions.dpToPx
-import ru.kubov.core_utils.presentation.view.message.ContainerMessageView
+import ru.kubov.core_utils.presentation.view.message.base.ContainerMessageView
 import ru.kubov.core_utils.presentation.view.message.ImageMessageView
 import ru.kubov.core_utils.presentation.view.message.TextMessageView
 import ru.kubov.feature_main_impl.R
