@@ -46,7 +46,7 @@ class ChatImageTextMessageContentView : ContainerLeadMessageContentView<ImageTex
     /**
      * Setter listener of clicking on image
      */
-    fun setOnImageClickListener(listener: () -> Unit) {
+    fun setOnImageClickListener(listener: (() -> Unit)?) {
         messageContentView.onImageClickListener = listener
     }
 }
