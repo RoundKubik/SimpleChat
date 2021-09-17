@@ -72,7 +72,7 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
         _binding = ViewMessagesAttachmentBinding.inflate(LayoutInflater.from(context), this, false)
-        binding.root.addView(messageContentView, 0, contentLayoutParams)
+        binding.root.addView(messageContentView, contentLayoutParams)
         binding.viewMessagesAttachmentQcmvQuotedMessage.setDebounceClickListener {
             quotedMessageId?.let { id -> onQuotedMessageClickListener?.invoke(id) }
         }

@@ -34,12 +34,4 @@ class ChatImageTextMessageView : ContainerMessageView<ChatImageTextMessageConten
     override fun showMessageContent(contentView: ChatImageTextMessageContentView?, message: Message) {
         contentView?.showMessage(message)
     }
-
-    /**
-     * Setter click listener for image in forwarded message
-     * @param onImageClickListener - listener get parameters of id forwarded chat and id of message
-     */
-    fun setOnImageClickListener(onImageClickListener: (() -> Unit)?) {
-        messageContentView.setOnImageClickListener(onImageClickListener)
-    }
 }

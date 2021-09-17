@@ -17,6 +17,7 @@ import com.facebook.imagepipeline.request.ImageRequestBuilder
 import ru.kubov.core_utils.R
 import ru.kubov.core_utils.databinding.ViewImageContentBinding
 import ru.kubov.core_utils.domain.models.Photo
+import ru.kubov.core_utils.extensions.imageUri
 
 /**
  * View implements displaying image in messages
