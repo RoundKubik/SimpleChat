@@ -12,7 +12,9 @@ import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.presentation.view.message.MessageReplyView
 import ru.kubov.core_utils.utils.TextChangesTextWatcher
 
-// TODO: 12.09.2021
+/**
+ * Class implements presentation of view with input message
+ */
 class ChatInputView : LinearLayout {
 
     interface Listener {
@@ -105,7 +107,10 @@ class ChatInputView : LinearLayout {
         }
     }
 
-    // TODO: 12.09.2021
+    /**
+     * Method to show reply message and show message content
+     * @param message
+     */
     fun showRepliedMessage(message: Message) {
         if (messageReplyView == null) {
             val position = indexOfChild(binding.viewChatInputVsReplyMessage)
@@ -124,7 +129,9 @@ class ChatInputView : LinearLayout {
         messageReplyView?.showMessage(message)
     }
 
-    // TODO: 12.09.2021
+    /**
+     * Method to hide reply message
+     */
     fun removeRepliedMessage() {
         messageReplyView?.animateHide()
     }

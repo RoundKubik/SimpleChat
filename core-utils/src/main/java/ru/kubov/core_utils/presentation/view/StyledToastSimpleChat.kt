@@ -8,6 +8,9 @@ import androidx.annotation.DrawableRes
 import androidx.core.view.isVisible
 import ru.kubov.core_utils.databinding.ToastStyledSimpleChatBinding
 
+/**
+ * Class implements logic of toast manager to show custom toasts
+ */
 class StyledToastSimpleChat {
 
     companion object {

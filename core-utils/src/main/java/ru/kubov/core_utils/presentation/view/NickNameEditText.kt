@@ -18,9 +18,6 @@ import kotlin.math.max
  */
 class NickNameEditText : AppCompatEditText {
 
-    // TODO: 06.09.2021 in future maybe add text watcher
-    private var ignoreSelection = false
-
     private val allowedChartInputFilter = InputFilter { source, start, end, dest, dstart, dend ->
         val result = StringBuffer()
         var shiftedStart = start
@@ -55,12 +52,10 @@ class NickNameEditText : AppCompatEditText {
      */
     override fun onSelectionChanged(selStart: Int, selEnd: Int) {
         super.onSelectionChanged(selStart, selEnd)
-        if (text.isNullOrEmpty() || ignoreSelection) return
+        if (text.isNullOrEmpty()) return
 
         if (selStart < PREFIX.length) {
-            ignoreSelection = true
             setSelection(PREFIX.length, max(PREFIX.length, selEnd))
-            ignoreSelection = false
         }
     }
 

@@ -50,8 +50,6 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
     protected var chatId: Long? = null
     protected var messageId: Long? = null
     protected var quotedMessageId: Long? = null
-    protected var messageLinkUrl: String? = null
-    protected var messageLinkChatId: Long? = null
 
     // TODO: 16.09.2021 remove and get from stylable
     private val highlightColor = ContextCompat.getColor(context, R.color.highlight_color)
@@ -246,8 +244,6 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
         chatId = message.chatId
         messageId = message.id
         quotedMessageId = message.quotedMessage?.id
-        messageLinkUrl = message.link?.url
-        messageLinkChatId = message.link?.chatId
     }
 
     private fun showLocalAlpha(show: Boolean) {

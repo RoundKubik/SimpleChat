@@ -15,7 +15,9 @@ import ru.kubov.core_utils.extensions.dpToPx
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
 
-// TODO: 12.09.2021  
+/**
+ * Class implements
+ */
 class MessageReplyView : FrameLayout {
 
     companion object {

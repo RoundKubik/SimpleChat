@@ -12,10 +12,11 @@ import ru.kubov.core_utils.extensions.dpToPx
 import ru.kubov.core_utils.extensions.setPaddingRight
 import ru.kubov.core_utils.extensions.showImage
 
-// TODO: 13.09.2021 add documentation 
+/**
+ * Class implements presentation of quoted message
+ */
 class QuotedChatMessageView : FrameLayout {
 
-    // TODO: 13.09.2021 add flexible layout and parse attrs and styles 
     companion object {
         private const val MEASURE_SPEC_SIZE = 40
         private const val RIGHT_PADDING_HAS_IMAGE = 56
@@ -27,10 +28,7 @@ class QuotedChatMessageView : FrameLayout {
 
     constructor(context: Context) : this(context, null)
 
-    // TODO: 13.09.2021 add ripple effect 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        isClickable = true
-        isFocusable = true
         _binding = ViewQuotedChatMessageBinding.inflate(LayoutInflater.from(context), this)
     }
 
@@ -39,7 +37,11 @@ class QuotedChatMessageView : FrameLayout {
         super.onMeasure(widthMeasureSpec, newHeightMeasureSpec)
     }
 
-    // TODO: 12.09.2021  add documentationion
+    /**
+     *  Method provides show quoted message content
+     *
+     *  @param quotedMessage - message data
+     */
     fun setQuotedMessage(quotedMessage: Message) {
 
         val hasImage = quotedMessage.messageType in arrayOf(MessageType.SingleImage)

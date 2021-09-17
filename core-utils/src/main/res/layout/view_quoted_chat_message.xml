@@ -4,7 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_64"
     android:background="@color/background_secondary"
+    android:clickable="true"
+    android:focusable="true"
     tools:parentTag="android.widget.FrameLayout">
+
+    <View
+        android:layout_width="@dimen/dp_2"
+        android:layout_height="match_parent"
+        android:background="@color/primary_highlight_color" />
 
     <View
         android:layout_width="match_parent"

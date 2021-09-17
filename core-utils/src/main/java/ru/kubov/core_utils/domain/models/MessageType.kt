@@ -1,6 +1,8 @@
 package ru.kubov.core_utils.domain.models
 
-// TODO: 11.09.2021  
+/**
+ * Class provides info about type of message
+ */
 sealed class MessageType {
     object Text : MessageType()
     object SingleImage : MessageType()

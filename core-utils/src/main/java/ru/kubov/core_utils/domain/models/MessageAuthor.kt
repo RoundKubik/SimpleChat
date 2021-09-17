@@ -1,7 +1,7 @@
 package ru.kubov.core_utils.domain.models
 
-// TODO: 13.09.2021 check logic
 // will be used to support channels logic
+// TODO: 17.09.2021 will be removed or used in future
 data class MessageAuthor(
     var userId: Long?,
     var name: String,
