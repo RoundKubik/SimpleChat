@@ -1,4 +1,4 @@
-package ru.kubov.core_utils.presentation.view.message.base
+package ru.kubov.core_utils.presentation.view.message.content
 
 import android.content.Context
 import android.util.AttributeSet

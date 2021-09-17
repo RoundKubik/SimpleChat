@@ -1,4 +1,4 @@
-package ru.kubov.core_utils.presentation.view.message.base
+package ru.kubov.core_utils.presentation.view.message.content
 
 import android.content.Context
 import android.util.AttributeSet
@@ -14,6 +14,18 @@ import ru.kubov.core_utils.extensions.setDebounceClickListener
  *  Image and text content view provides displaying text message and image
  */
 class ImageTextContentView : LinearLayout {
+
+    /**
+     * Set click listener when clicked on image
+     *
+     */
+    var onImageClickListener: (() -> Unit)? = null
+        set(value) {
+            field = value
+            binding.viewImageTextMessageContentTcvImageContent.setDebounceClickListener {
+                field?.invoke()
+            }
+        }
 
     private var _binding: ViewImageTextMessageContentBinding? = null
     private val binding get() = _binding!!
@@ -43,14 +55,5 @@ class ImageTextContentView : LinearLayout {
         }
     }
 
-    /**
-     * Set click listener when clicked on image
-     *
-     * @param onClickListener - current listener
-     */
-    fun setOnImageClickListener(onClickListener: () -> Unit) {
-        binding.viewImageTextMessageContentTcvImageContent.setDebounceClickListener {
-            onClickListener.invoke()
-        }
-    }
+
 }

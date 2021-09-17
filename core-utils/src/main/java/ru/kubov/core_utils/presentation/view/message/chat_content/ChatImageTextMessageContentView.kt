@@ -1,4 +1,4 @@
-package ru.kubov.core_utils.presentation.view.message.chat
+package ru.kubov.core_utils.presentation.view.message.chat_content
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,7 +6,7 @@ import androidx.core.view.updateLayoutParams
 import ru.kubov.core_utils.domain.models.Message
 import ru.kubov.core_utils.extensions.dpToPx
 import ru.kubov.core_utils.presentation.view.message.base.ContainerLeadMessageContentView
-import ru.kubov.core_utils.presentation.view.message.base.ImageTextContentView
+import ru.kubov.core_utils.presentation.view.message.content.ImageTextContentView
 
 /**
  * Class implements presentation of view with avatar and nickname, message text and image
@@ -47,6 +47,6 @@ class ChatImageTextMessageContentView : ContainerLeadMessageContentView<ImageTex
      * Setter listener of clicking on image
      */
     fun setOnImageClickListener(listener: () -> Unit) {
-        messageContentView.setOnImageClickListener(listener)
+        messageContentView.onImageClickListener = listener
     }
 }

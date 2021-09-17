@@ -53,10 +53,10 @@ abstract class ContainerLeadMessageContentView<CV : View> : FrameLayout {
      * @param onClickListener - listener
      * implemented by [setDebounceClickListener]
      */
-    fun setOnAuthorClickListener(onClickListener: (Long) -> Unit) {
+    fun setOnAuthorClickListener(onClickListener: ((Long) -> Unit)?) {
         binding.viewContainerLeadMessageContentSdvAvatar.setDebounceClickListener {
             cachedMessage?.user?.id?.let {
-                onClickListener.invoke(it)
+                onClickListener?.invoke(it)
             }
         }
     }

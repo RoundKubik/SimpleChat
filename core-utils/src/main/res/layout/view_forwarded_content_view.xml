@@ -35,7 +35,7 @@
         android:paddingHorizontal="@dimen/dp_8"
         tools:text="roundkubik test work" />
 
-    <ru.kubov.core_utils.presentation.view.message.base.TextContentView
+    <ru.kubov.core_utils.presentation.view.message.content.TextContentView
         android:id="@+id/view_forwarded_content_view__tcv_text_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         android:layout_marginStart="@dimen/dp_16"
         android:visibility="gone" />
 
-    <ru.kubov.core_utils.presentation.view.message.base.ImageTextContentView
+    <ru.kubov.core_utils.presentation.view.message.content.ImageTextContentView
         android:id="@+id/view_forwarded_content_view__icv_image_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

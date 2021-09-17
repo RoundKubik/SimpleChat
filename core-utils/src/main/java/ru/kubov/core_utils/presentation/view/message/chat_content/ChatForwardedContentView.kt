@@ -1,30 +1,36 @@
-package ru.kubov.core_utils.presentation.view.message.chat
+package ru.kubov.core_utils.presentation.view.message.chat_content
 
 import android.content.Context
 import android.util.AttributeSet
 import ru.kubov.core_utils.domain.models.Message
+import ru.kubov.core_utils.extensions.dpToPx
 import ru.kubov.core_utils.presentation.view.message.base.ContainerLeadMessageContentView
-import ru.kubov.core_utils.presentation.view.message.base.ContainerMessageView
-import ru.kubov.core_utils.presentation.view.message.chat_content.ChatForwardedContentView
-import ru.kubov.core_utils.presentation.view.message.chat_content.ChatImageTextMessageContentView
+import ru.kubov.core_utils.presentation.view.message.content.ForwardedContentView
 
 /**
- * Implements logic to display chat forwarded message
+ * Class implements presentation of forwarded message in chats
  */
-class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentView> {
+class ChatForwardedContentView : ContainerLeadMessageContentView<ForwardedContentView> {
 
-    private val messageContentView = ChatForwardedContentView(context)
+    companion object {
+        private const val TOP_MARGIN = 8
+    }
+
+    private val contentView = ForwardedContentView(context)
 
     constructor(context: Context) : this(context, null)
 
     constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
-        setMessageContentView(messageContentView)
+        setMessageContentView(contentView)
+        setContentViewLayoutParams(LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT).apply {
+            topMargin = dpToPx(TOP_MARGIN)
+        })
     }
 
-    override fun showMessageContent(contentView: ChatForwardedContentView?, message: Message) {
-        contentView?.showMessage(message)
+    override fun showMessageContent(contentView: ForwardedContentView?, message: Message) {
+        contentView?.showForwardedMessage(message)
     }
 
     /**
@@ -32,7 +38,7 @@ class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentVi
      * @param onForwardedMessageListener - listener get parameters of id forwarded chat and id of message
      */
     fun setForwardedMessageClickListener(onForwardedMessageListener: (forwardedChatId: Long, messageId: Long) -> Unit) {
-        messageContentView.setForwardedMessageClickListener(onForwardedMessageListener)
+        contentView.onForwardedMessageClickListener = onForwardedMessageListener
     }
 
     /**
@@ -40,6 +46,6 @@ class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentVi
      * @param onImageClickListener - listener get parameters of id forwarded chat and id of message
      */
     fun setOnImageClickListener(onImageClickListener: (forwardedChatId: Long, messageId: Long) -> Unit) {
-        messageContentView.setOnImageClickListener(onImageClickListener)
+        contentView.onImageClickListener = onImageClickListener
     }
 }

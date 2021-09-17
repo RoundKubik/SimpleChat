@@ -41,47 +41,6 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
     }
 
     /**
-     * Provides callbacks to communication with message
-     */
-    // TODO: 17.09.2021 remove 
-    interface Listener {
-
-        /**
-         * Callback when user clicked on message
-         *
-         * @param message - clicked message
-         */
-        fun onMessageClick(message: Message)
-
-        /**
-         * Callback when user clicked on message view long time
-         *
-         * @param message - clicked message
-         */
-        fun onMessageLongClick(message: Message)
-
-        /**
-         * Callback when user clicked on author of message, it may be message author avatar or nickname
-         *
-         *  @param userId - id of message author
-         */
-        fun onMessageAuthorClick(userId: Long)
-
-        fun onQuotedMessageClick(messageId: Long)
-
-        // TODO: 12.09.2021
-        fun onForwardedMessageClick(chatId: Long, messageId: Long)
-
-        /**
-         * Callback when user clicked on image on message
-         *
-         * @param chatId - id of chat where clicked message
-         * @param messageId - id of message where located message
-         */
-        fun onMessageImageClick(chatId: Long, messageId: Long)
-    }
-
-    /**
      * Callback when user clicked on quoted message
      *
      *  messageId - id of quoted message

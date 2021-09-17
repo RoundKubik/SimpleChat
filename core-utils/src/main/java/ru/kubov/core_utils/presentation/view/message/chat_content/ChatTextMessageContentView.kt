@@ -1,12 +1,10 @@
-package ru.kubov.core_utils.presentation.view.message.chat
+package ru.kubov.core_utils.presentation.view.message.chat_content
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import ru.kubov.core_utils.domain.models.Message
-import ru.kubov.core_utils.domain.utils.DateFormatter
 import ru.kubov.core_utils.presentation.view.message.base.ContainerLeadMessageContentView
-import ru.kubov.core_utils.presentation.view.message.base.TextContentView
+import ru.kubov.core_utils.presentation.view.message.content.TextContentView
 
 /**
  *  View implements message view in chat with avatar and username
