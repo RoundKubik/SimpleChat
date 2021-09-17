@@ -35,3 +35,7 @@ fun View.getDrawable(@DrawableRes id: Int): Drawable? = ContextCompat.getDrawabl
 
 // TODO: 13.09.2021  add documentation
 fun View.dpToPx(dp: Int): Int = context.dpToPx(dp)
+
+fun View.setAlphaIfNew(alpha: Float) {
+    if (this.alpha != alpha) this.alpha = alpha
+}

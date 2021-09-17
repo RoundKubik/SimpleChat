@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.kubov.core_utils.domain.models.Message
 import ru.kubov.core_utils.extensions.dpToPx
 import ru.kubov.core_utils.presentation.view.message.base.ContainerMessageView
-import ru.kubov.core_utils.presentation.view.message.ImageMessageView
-import ru.kubov.core_utils.presentation.view.message.TextMessageView
+import ru.kubov.core_utils.presentation.view.message.chat.ChatImageTextMessageView
 import ru.kubov.feature_main_impl.R
 
 // TODO: Extend and implement adapter for channels
@@ -372,7 +371,7 @@ class MessagesAdapter(
                     context, messageListener,
                     textStylerListener
                 )
-                TYPE_MESSAGE_IMAGE_GIF -> ImageMessageView(
+                TYPE_MESSAGE_IMAGE_GIF -> ChatImageTextMessageView(
                     context, chatMessageLeftMargin,
                     messageRightMargin, 0, messageListener, textStylerListener
                 )

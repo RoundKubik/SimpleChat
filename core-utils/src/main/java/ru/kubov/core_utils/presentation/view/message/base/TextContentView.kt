@@ -9,7 +9,7 @@ import ru.kubov.core_utils.databinding.ViewTextContentBinding
 import ru.kubov.core_utils.domain.models.Message
 
 /**
- * Implements view that keeps message
+ * Implements view that keeps text content message
  */
 open class TextContentView : FrameLayout {
 
