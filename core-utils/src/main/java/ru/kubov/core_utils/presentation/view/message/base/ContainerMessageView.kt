@@ -45,7 +45,7 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
      *
      *  messageId - id of quoted message
      */
-    open var onQuotedMessageClickListener: ((messageId: Long) -> Unit)? = null
+    var onQuotedMessageClickListener: ((messageId: Long) -> Unit)? = null
 
     protected var chatId: Long? = null
     protected var messageId: Long? = null

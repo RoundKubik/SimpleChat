@@ -5,5 +5,6 @@ package ru.kubov.core_utils.domain.models
  */
 sealed class MessageType {
     object Text : MessageType()
+    object Forward: MessageType()
     object SingleImage : MessageType()
 }

@@ -37,7 +37,7 @@ class ChatForwardedContentView : ContainerLeadMessageContentView<ForwardedConten
      * Setter click listener for forwarded message
      * @param onForwardedMessageListener - listener get parameters of id forwarded chat and id of message
      */
-    fun setForwardedMessageClickListener(onForwardedMessageListener: (forwardedChatId: Long, messageId: Long) -> Unit) {
+    fun setForwardedMessageClickListener(onForwardedMessageListener: ((forwardedChatId: Long, messageId: Long) -> Unit)?) {
         contentView.onForwardedMessageClickListener = onForwardedMessageListener
     }
 
@@ -45,7 +45,7 @@ class ChatForwardedContentView : ContainerLeadMessageContentView<ForwardedConten
      * Setter click listener for image in forwarded message
      * @param onImageClickListener - listener get parameters of id forwarded chat and id of message
      */
-    fun setOnImageClickListener(onImageClickListener: (forwardedChatId: Long, messageId: Long) -> Unit) {
+    fun setOnImageClickListener(onImageClickListener: ((forwardedChatId: Long, messageId: Long) -> Unit)?) {
         contentView.onImageClickListener = onImageClickListener
     }
 }

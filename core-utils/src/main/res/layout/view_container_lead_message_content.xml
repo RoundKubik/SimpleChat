@@ -14,6 +14,7 @@
         android:layout_marginTop="@dimen/dp_2"
         app:actualImageScaleType="focusCrop"
         app:fadeDuration="0"
+        app:placeholderImage="@color/background_secondary"
         app:roundAsCircle="true" />
 
     <View

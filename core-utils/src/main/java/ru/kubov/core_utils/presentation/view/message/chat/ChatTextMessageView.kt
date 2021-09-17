@@ -14,7 +14,7 @@ class ChatTextMessageView : ContainerMessageView<ChatTextMessageContentView> {
     /**
      * Click listener on message author avatar
      */
-    val onMessageAuthorClickListener: ((userId: Long) -> Unit)? = null
+    var onMessageAuthorClickListener: ((userId: Long) -> Unit)? = null
 
     private val contentView = ChatTextMessageContentView(context).apply {
         setOnAuthorClickListener {

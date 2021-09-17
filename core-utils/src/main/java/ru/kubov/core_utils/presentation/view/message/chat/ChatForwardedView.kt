@@ -11,7 +11,7 @@ import ru.kubov.core_utils.presentation.view.message.chat_content.ChatImageTextM
 /**
  * Implements logic to display chat forwarded message
  */
-class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentView> {
+class ChatForwardedView : ContainerMessageView<ChatForwardedContentView> {
 
     private val messageContentView = ChatForwardedContentView(context)
 
@@ -20,7 +20,8 @@ class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentVi
     constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
-        setMessageContentView(messageContentView)
+        setContentView(messageContentView)
+        setHasMessagesTitle(true)
     }
 
     override fun showMessageContent(contentView: ChatForwardedContentView?, message: Message) {
@@ -31,7 +32,7 @@ class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentVi
      * Setter click listener for forwarded message
      * @param onForwardedMessageListener - listener get parameters of id forwarded chat and id of message
      */
-    fun setForwardedMessageClickListener(onForwardedMessageListener: (forwardedChatId: Long, messageId: Long) -> Unit) {
+    fun setForwardedMessageClickListener(onForwardedMessageListener: ((forwardedChatId: Long, messageId: Long) -> Unit)?) {
         messageContentView.setForwardedMessageClickListener(onForwardedMessageListener)
     }
 
@@ -39,7 +40,7 @@ class ChatForwardedView : ContainerLeadMessageContentView<ChatForwardedContentVi
      * Setter click listener for image in forwarded message
      * @param onImageClickListener - listener get parameters of id forwarded chat and id of message
      */
-    fun setOnImageClickListener(onImageClickListener: (forwardedChatId: Long, messageId: Long) -> Unit) {
+    fun setOnImageClickListener(onImageClickListener: ((forwardedChatId: Long, messageId: Long) -> Unit)?) {
         messageContentView.setOnImageClickListener(onImageClickListener)
     }
 }

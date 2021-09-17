@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_64"
@@ -24,7 +25,11 @@
         android:layout_width="@dimen/dp_40"
         android:layout_height="@dimen/dp_40"
         android:layout_marginLeft="@dimen/dp_12"
-        android:layout_marginTop="@dimen/dp_12" />
+        android:layout_marginTop="@dimen/dp_12"
+        app:actualImageScaleType="focusCrop"
+        app:fadeDuration="0"
+        app:placeholderImage="@color/background_primary"
+        app:roundAsCircle="true" />
 
     <TextView
         android:id="@+id/view_message_reply__tv_author"
