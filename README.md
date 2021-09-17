@@ -3,6 +3,7 @@
 My pet project
 
 Current state of the project readiness:
+
 30% of 100%
 [#################--------------------------------------]
 
