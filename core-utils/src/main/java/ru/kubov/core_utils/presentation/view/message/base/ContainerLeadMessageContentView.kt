@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import androidx.core.view.isVisible
 import ru.kubov.core_utils.databinding.ViewContainerLeadMessageContentBinding
 import ru.kubov.core_utils.domain.models.Message
@@ -36,7 +37,6 @@ abstract class ContainerLeadMessageContentView<CV : View> : FrameLayout {
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
         _binding = ViewContainerLeadMessageContentBinding.inflate(LayoutInflater.from(context), this)
-        replaceStubToContentView()
     }
 
     /**
@@ -103,12 +103,18 @@ abstract class ContainerLeadMessageContentView<CV : View> : FrameLayout {
      */
     fun setMessageContentView(contentView: CV) {
         this.contentView = contentView
+        replaceStubToContentView()
     }
 
     private fun replaceStubToContentView() {
         indexOfChild(binding.viewContainerLeadMessageContentVsViewStub).apply {
+            val originalLp = binding.viewContainerLeadMessageContentVsViewStub.layoutParams as LayoutParams
+            contentViewLayoutParams.leftMargin += originalLp.leftMargin
+            contentViewLayoutParams.topMargin += originalLp.topMargin
+            contentViewLayoutParams.rightMargin += originalLp.rightMargin
+            contentViewLayoutParams.bottomMargin += originalLp.bottomMargin
             removeViewAt(this)
-            addView(contentView, this, layoutParams)
+            addView(contentView, this, contentViewLayoutParams)
         }
     }
 

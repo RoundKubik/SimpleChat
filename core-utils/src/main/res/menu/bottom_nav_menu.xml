@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/walletFragment"
+        android:id="@+id/chatFragment"
         android:enabled="true"
         android:icon="@drawable/ic_selector_bottom_chat"
         android:title="@string/menu_chats"

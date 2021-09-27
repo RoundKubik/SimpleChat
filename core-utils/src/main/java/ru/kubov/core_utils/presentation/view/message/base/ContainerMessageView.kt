@@ -71,8 +71,8 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
     constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
-        _binding = ViewMessagesAttachmentBinding.inflate(LayoutInflater.from(context), this, false)
-        binding.root.addView(messageContentView, contentLayoutParams)
+        orientation = VERTICAL
+        _binding = ViewMessagesAttachmentBinding.inflate(LayoutInflater.from(context), this)
         binding.viewMessagesAttachmentQcmvQuotedMessage.setDebounceClickListener {
             quotedMessageId?.let { id -> onQuotedMessageClickListener?.invoke(id) }
         }
@@ -103,7 +103,7 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
      */
     fun setContentView(messageContentView: CV) {
         this.messageContentView = messageContentView
-        requestLayout()
+        replaceStubToContentView()
     }
 
     /**
@@ -113,7 +113,6 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
      */
     fun setHasMessagesTitle(hasNewMessagesTitle: Boolean) {
         this.hasNewMessagesTitle = hasNewMessagesTitle
-        requestLayout()
     }
 
 
@@ -191,7 +190,7 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
 
         showFailedLabel(message)
 
-        updateLoader(message)
+        //updateLoader(message)
     }
 
     /**
@@ -302,6 +301,18 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
             else -> {
                 showLocalAlpha(false)
             }
+        }
+    }
+
+    private fun replaceStubToContentView() {
+        indexOfChild(binding.viewMessagesAttachmentVsViewStub).apply {
+            val originalLp = binding.viewMessagesAttachmentVsViewStub.layoutParams as LayoutParams
+            contentLayoutParams.leftMargin += originalLp.leftMargin
+            contentLayoutParams.topMargin += originalLp.topMargin
+            contentLayoutParams.rightMargin += originalLp.rightMargin
+            contentLayoutParams.bottomMargin += originalLp.bottomMargin
+            removeViewAt(this)
+            addView(messageContentView, this, contentLayoutParams)
         }
     }
 }

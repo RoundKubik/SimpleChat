@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:labelVisibilityMode="unlabeled"
-        app:itemIconSize="@dimen/dp_36"
+        app:itemIconSize="@dimen/dp_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 

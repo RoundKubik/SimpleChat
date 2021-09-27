@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_messages_attachment"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:parentTag="android.widget.LinearLayout">
 
     <TextView
         android:id="@+id/view_messages_attachment__tv_header_new_message"
@@ -15,7 +17,7 @@
         android:paddingBottom="@dimen/dp_6"
         android:text="@string/new_messages"
         android:textSize="@dimen/sp_13"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <ru.kubov.core_utils.presentation.view.message.QuotedChatMessageView
         android:id="@+id/view_messages_attachment__qcmv__quoted_message"
@@ -33,4 +35,8 @@
         android:text="@string/error_sending_message"
         android:visibility="gone" />
 
-</LinearLayout>
+    <ViewStub
+        android:id="@+id/view_messages_attachment__vs_view_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</merge>

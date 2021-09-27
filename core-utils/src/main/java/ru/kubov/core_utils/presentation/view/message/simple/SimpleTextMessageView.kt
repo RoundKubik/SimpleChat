@@ -11,14 +11,15 @@ import ru.kubov.core_utils.presentation.view.message.content.TextContentView
  */
 class SimpleTextMessageView : ContainerMessageView<TextContentView> {
 
-    private val contentView = TextContentView(context)
+    private val contentView = TextContentView(context).also {
+        setContentView(it)
+    }
 
     constructor(context: Context) : this(context, null)
 
     constructor(context: Context, attributeSet: AttributeSet?) : this(context, attributeSet, 0)
 
     constructor(context: Context, attributeSet: AttributeSet?, defStyle: Int) : super(context, attributeSet, defStyle) {
-        setContentView(contentView)
         setHasMessagesTitle(false)
     }
 

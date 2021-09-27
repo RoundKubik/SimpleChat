@@ -61,9 +61,6 @@ class SimpleChatActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         navigatior.detach()
-        if (isFinishing) {
-            RootComponentHolder.reset()
-        }
     }
 
     override fun onDestroy() {

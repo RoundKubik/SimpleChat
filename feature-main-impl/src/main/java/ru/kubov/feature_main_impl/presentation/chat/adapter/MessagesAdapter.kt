@@ -2,6 +2,7 @@ package ru.kubov.feature_main_impl.presentation.chat.adapter
 
 import android.animation.ValueAnimator
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.animation.addListener
@@ -95,6 +96,8 @@ class MessagesAdapter(
         private const val TYPE_MESSAGE_FORWARDED = 6
 
         private const val SAME_GROUP_MAX_TIME_MS = 120_000L
+
+        private const val TAG = "MessagesAdapter"
     }
 
 
@@ -179,22 +182,26 @@ class MessagesAdapter(
                     ViewMessageProgressBarLoaderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 LoaderViewHolder(binding)
             }
-            else -> NewMessageViewHolder(messageViewFactory.createView(viewType))
+            else -> {
+                Log.d(TAG, "onCreateViewHolder: ")
+                NewMessageViewHolder(messageViewFactory.createView(viewType))
+            }
         }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is NewMessageViewHolder -> {
+                Log.d(TAG, "onBindViewHolder: $holder")
                 val message = getItem(position)
                 val showNewMessagesHeader = firstUnreadMessageId == message.id
                 holder.messageView.showNewMessagesHeader(showNewMessagesHeader)
                 holder.bindMessage(message, canSendMessages)
-                val anim = highlightAnimMap[message.id]
-                if (anim != null && anim.isRunning) {
-                    holder.messageView.startHighlightAnimation(anim.currentPlayTime)
-                } else {
-                    holder.messageView.clearBackgroundAnimation()
-                }
+                /* val anim = highlightAnimMap[message.id]
+                 if (anim != null && anim.isRunning) {
+                     holder.messageView.startHighlightAnimation(anim.currentPlayTime)
+                 } else {
+                     holder.messageView.clearBackgroundAnimation()
+                 }*/
                 onMessageBindedListener?.invoke(message)
             }
         }
@@ -361,6 +368,7 @@ class MessagesAdapter(
             chatId = message.chatId
             messageId = message.id
             canReply = canSendMessages && !message.isLocal
+            Log.d(TAG, "bindMessage: $message")
             messageView.showMessage(message)
         }
 
@@ -409,16 +417,28 @@ class MessagesAdapter(
          */
         fun createView(viewType: Int): ContainerMessageView<*> {
             val messageView = when (viewType) {
-                TYPE_SIMPLE_MESSAGE_TEXT -> SimpleTextMessageView(context).apply {
-                    setAttachmentPaddings(
-                        leftMarginsSimpleMessageView,
-                        topMarginsSimpleMessageView,
-                        rightMarginsSimpleMessageView,
-                        bottomMarginsSimpleMessageView,
-                    )
+                TYPE_SIMPLE_MESSAGE_TEXT -> {
+                    Log.d(TAG, "createView: $TYPE_SIMPLE_MESSAGE_TEXT")
+                    SimpleTextMessageView(context).apply {
+                        setAttachmentPaddings(
+                            leftMarginsSimpleMessageView,
+                            topMarginsSimpleMessageView,
+                            rightMarginsSimpleMessageView,
+                            bottomMarginsSimpleMessageView,
+                        )
+                    }
                 }
-                TYPE_MESSAGE_TEXT -> ChatTextMessageView(context).apply {
-                    onMessageAuthorClickListener = onAuthorClickListener
+                TYPE_MESSAGE_TEXT -> {
+                    Log.d(TAG, "createView: $TYPE_MESSAGE_TEXT")
+                    ChatTextMessageView(context).apply {
+                        onMessageAuthorClickListener = onAuthorClickListener
+                        setAttachmentPaddings(
+                            leftMarginsSimpleMessageView,
+                            topMarginsSimpleMessageView,
+                            rightMarginsSimpleMessageView,
+                            bottomMarginsSimpleMessageView
+                        )
+                    }
                 }
                 TYPE_SIMPLE_MESSAGE_IMAGE -> SimpleImageTextMessageView(context).apply {
                     onMessageClickListener = messageClickListener
@@ -450,7 +470,7 @@ class MessagesAdapter(
             }
             messageView.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
+                ViewGroup.LayoutParams.MATCH_PARENT
             )
             return messageView
         }
