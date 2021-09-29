@@ -89,6 +89,7 @@
     </style>
 
     <style name="ToolbarStyle">
+        <item name="android:background">@color/background_secondary</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_56</item>
     </style>
@@ -144,5 +145,31 @@
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@null</item>
     </style>
+
+    <style name="ImageButton.Action" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/dp_40</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="ImageButton.Action.Small" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/dp_24</item>
+        <item name="android:layout_height">@dimen/dp_24</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="EditText.Search" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:paddingEnd">@dimen/dp_16</item>
+        <item name="android:textColorHint">@color/hint_text_color_secondary</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
 
 </resources>
