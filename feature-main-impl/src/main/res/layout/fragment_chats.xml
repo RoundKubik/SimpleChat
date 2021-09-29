@@ -8,7 +8,7 @@
         layout="@layout/include_main_toolbar" />
 
     <View
-        android:id="@+id/frg_cahts__divider"
+        android:id="@+id/frg_chats__divider"
         android:layout_width="match_parent"
         android:layout_below="@id/frg_chats__include_toolbar"
         android:layout_height="@dimen/dp_2" />
@@ -17,6 +17,6 @@
         android:id="@+id/frg_chats__rv_chats"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/frg_cahts__divider" />
+        android:layout_below="@id/frg_chats__divider" />
 
 </RelativeLayout>
