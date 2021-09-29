@@ -170,7 +170,12 @@ abstract class ContainerMessageView<CV : View> : LinearLayout {
         binding.viewMessagesAttachmentTvSendingMessageFailed.setPadding(
             attachmentMarginLeft, attachmentMarginTop, attachmentMarginRight, attachmentMarginBottom
         )
-        invalidate()
+        contentLayoutParams.setMargins(
+            attachmentMarginLeft,
+            attachmentMarginTop,
+            attachmentMarginRight,
+            attachmentMarginBottom
+        )
     }
 
 

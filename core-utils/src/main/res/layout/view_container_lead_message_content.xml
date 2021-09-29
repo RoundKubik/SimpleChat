@@ -40,7 +40,7 @@
     <TextView
         android:id="@+id/view_container_lead_message_content__tv_author"
         style="@style/TextView.Main.Medium"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="@dimen/dp_18"
         android:layout_marginLeft="@dimen/dp_64"
         android:layout_marginTop="@dimen/dp_4"
@@ -50,9 +50,9 @@
     <ViewStub
         android:id="@+id/view_container_lead_message_content__vs_view_stub"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/dp_58"
         android:layout_marginLeft="@dimen/dp_64"
-        android:layout_marginTop="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_24"
         android:layout_marginRight="@dimen/dp_12" />
 
 </merge>

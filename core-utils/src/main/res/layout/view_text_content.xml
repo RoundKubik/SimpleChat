@@ -2,12 +2,12 @@
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:parentTag="android.widget.FrameLayout">
 
     <TextView
         android:id="@+id/view_text_content__tv_text"
-        style="@style/TextView.Main"
+        style="@style/TextView.Message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Some message" />

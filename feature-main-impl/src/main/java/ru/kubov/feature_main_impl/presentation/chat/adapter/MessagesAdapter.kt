@@ -5,6 +5,7 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.core.animation.addListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -407,7 +408,7 @@ class MessagesAdapter(
     ) {
 
         private val leftMarginsSimpleMessageView = context.resources.getDimension(R.dimen.dp_64).roundToInt()
-        private val topMarginsSimpleMessageView = context.resources.getDimension(R.dimen.dp_0).roundToInt()
+        private val topMarginsSimpleMessageView = context.resources.getDimension(R.dimen.dp_8).roundToInt()
         private val rightMarginsSimpleMessageView = context.resources.getDimension(R.dimen.dp_12).roundToInt()
         private val bottomMarginsSimpleMessageView = context.resources.getDimension(R.dimen.dp_0).roundToInt()
 
@@ -432,12 +433,7 @@ class MessagesAdapter(
                     Log.d(TAG, "createView: $TYPE_MESSAGE_TEXT")
                     ChatTextMessageView(context).apply {
                         onMessageAuthorClickListener = onAuthorClickListener
-                        setAttachmentPaddings(
-                            leftMarginsSimpleMessageView,
-                            topMarginsSimpleMessageView,
-                            rightMarginsSimpleMessageView,
-                            bottomMarginsSimpleMessageView
-                        )
+
                     }
                 }
                 TYPE_SIMPLE_MESSAGE_IMAGE -> SimpleImageTextMessageView(context).apply {
@@ -470,7 +466,7 @@ class MessagesAdapter(
             }
             messageView.layoutParams = ViewGroup.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
+                ViewGroup.LayoutParams.WRAP_CONTENT
             )
             return messageView
         }

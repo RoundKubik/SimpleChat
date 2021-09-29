@@ -53,33 +53,7 @@ class ChatFragment : Fragment() {
 
     private fun initMessagesAdapter() {
         messagesAdapter = MessagesAdapter(requireContext())
-        val view = ChatTextMessageView(requireContext())
-        binding.frgChatMessagesTest.addView(view)
-        view.showMessage( Message(
-            124,
-            23,
-            "First Message",
-            Date(),
-            isLocal = true,
-            MessageType.Text,
-            MessageAuthor(
-                null,
-                "Oleg",
-                null
-            ),
-            null,
-            null,
-            null,
-            User(
-                123,
-                "roundkubik",
-                true,
-                null
-            ),
-            null,
-            null
-        ))
-      /*  binding.frgChatRvMessages.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, true)
+        binding.frgChatRvMessages.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, true)
         messagesAdapter.messages = mutableListOf(
             Message(
                 124,
@@ -104,9 +78,59 @@ class ChatFragment : Fragment() {
                 ),
                 null,
                 null
-            )
+            ),
+            Message(
+                124,
+                23,
+                "Last Message",
+                Date(),
+                isLocal = true,
+                MessageType.Text,
+                MessageAuthor(
+                    null,
+                    "Oleg",
+                    null
+                ),
+                null,
+                null,
+                null,
+                User(
+                    123,
+                    "roundkubik",
+                    true,
+                    null
+                ),
+                null,
+                null
+            ),
+            Message(
+                124,
+                23,
+                "First Message",
+                Date(),
+                isLocal = true,
+                MessageType.Text,
+                MessageAuthor(
+                    null,
+                    "Oleg",
+                    null
+                ),
+                null,
+                null,
+                null,
+                User(
+                    123,
+                    "roundkubik",
+                    true,
+                    null
+                ),
+                null,
+                null
+            ),
+
+
         )
-        binding.frgChatRvMessages.adapter = messagesAdapter*/
+        binding.frgChatRvMessages.adapter = messagesAdapter
     }
 
     private fun initToolbar() {

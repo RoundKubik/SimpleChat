@@ -3,6 +3,7 @@ package ru.kubov.core_utils.presentation.view.message.content
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.ViewGroup
 import android.widget.FrameLayout
 import ru.kubov.core_utils.R
 import ru.kubov.core_utils.databinding.ViewTextContentBinding

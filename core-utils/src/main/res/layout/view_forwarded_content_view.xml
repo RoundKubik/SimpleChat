@@ -9,8 +9,7 @@
     <View
         android:id="@+id/view_forwarded_content_view__left_divider"
         android:layout_width="@dimen/dp_2"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_height="@dimen/dp_36"
         android:background="@color/primary_highlight_color" />
 
     <com.facebook.drawee.view.SimpleDraweeView

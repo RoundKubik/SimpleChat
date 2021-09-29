@@ -14,7 +14,7 @@ import ru.kubov.core_utils.presentation.view.message.content.ImageTextContentVie
 class ChatImageTextMessageContentView : ContainerLeadMessageContentView<ImageTextContentView> {
 
     companion object {
-        private const val BASE_TOP_MARGIN = 22
+        private const val BASE_TOP_MARGIN = 4
         private const val ADDITION_TOP_MARGIN_MESSAGE_TEXT_EMPTY = 8
         private const val ADDITION_TOP_MARGIN_MESSAGE_TEXT_NOT_EMPTY = 0
     }
