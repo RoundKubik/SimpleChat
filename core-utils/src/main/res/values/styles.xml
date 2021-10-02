@@ -22,8 +22,16 @@
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="TextView.Main.Medium" parent="TextView.Main">
+    <style name="TextView.Medium" parent="TextView.Main">
         <item name="android:textSize">@dimen/sp_13</item>
+    </style>
+
+    <style name="TextView.Medium.Secondary" parent="TextView.Medium">
+        <item name="android:textColor">@color/hint_text_color_secondary</item>
+    </style>
+
+    <style name="TextView.Medium.Bold" parent="TextView.Medium">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 
     <style name="TextView.Main.Bold" parent="TextView.Main">
