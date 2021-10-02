@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.kubov.feature_main_impl.R
 import ru.kubov.feature_main_impl.databinding.FragmentChatsBinding
 import ru.kubov.feature_main_impl.databinding.IncludeBaseToolbarBinding
 import ru.kubov.feature_main_impl.databinding.IncludeMainToolbarBinding
@@ -32,6 +33,14 @@ class ChatsFragment : Fragment() {
     }
 
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initViews()
+    }
+
+    private fun initViews() {
+        binding.frgChatsSvSearch.setSearchBackground(R.color.background_primary)
+    }
 
     private fun inject() {
         (MainFeatureComponentHolder.get() as MainFeatureComponent)

@@ -12,6 +12,7 @@ import ru.kubov.core_utils.databinding.ViewSearchBinding
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.utils.TextChangesTextWatcher
 
+// TODO: 02.10.2021 add parametrization from style attrs
 class SearchView : FrameLayout {
 
     var onSearchQueryChanged: ((query: String) -> Unit)? = null
@@ -65,5 +66,6 @@ class SearchView : FrameLayout {
         binding.viewSearchToolbarIbActionClear.setDebounceClickListener {
             clearInput()
         }
+        binding.viewSearchToolbarIbActionClear.isVisible = false
     }
 }

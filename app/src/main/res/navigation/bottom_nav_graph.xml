@@ -3,11 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav_graph"
-    app:startDestination="@id/profileFragment">
+    app:startDestination="@id/chatsFragment">
 
     <fragment
         android:id="@+id/profileFragment"
         android:name="ru.kubov.feature_main_impl.presentation.profile.ProfileFragment"
         tools:layout="@layout/fragment_profile"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="ru.kubov.feature_main_impl.presentation.chats.ChatsFragment"
+        android:label="ChatsFragment" />
 </navigation>
