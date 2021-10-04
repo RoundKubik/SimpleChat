@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/frg_chats__include_toolbar"
+        layout="@layout/include_main_toolbar" />
+
+    <View
+        android:id="@+id/frg_chats__divider"
+        android:layout_width="match_parent"
+        android:layout_below="@id/frg_chats__include_toolbar"
+        android:layout_height="@dimen/dp_2" />
+
+    <ru.kubov.core_utils.presentation.view.search.SearchView
+        android:id="@+id/frg_chats__sv_search"
+        android:layout_below="@id/frg_chats__divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frg_chats__rv_chats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frg_chats__sv_search" />
+
+</RelativeLayout>

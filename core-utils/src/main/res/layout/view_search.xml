@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <EditText
+        android:id="@+id/view_search__et_search"
+        style="@style/EditText.Search"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_toEndOf="@id/view_search_toolbar__ib_action_back"
+        android:hint="@string/chats_search" />
+
+    <ImageButton
+        android:id="@+id/view_search_toolbar_ib__action_clear"
+        style="@style/ImageButton.Action.Small"
+        android:layout_alignRight="@id/view_search__et_search"
+        android:layout_centerVertical="true"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:src="@drawable/ic_cross_24"
+        android:visibility="visible" />
+
+</merge>

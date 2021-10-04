@@ -13,12 +13,25 @@
         <item name="android:textColor">@color/main_text_color</item>
     </style>
 
+    <style name="TextView.H1.Bold" parent="TextView.Main">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textSize">@dimen/sp_24</item>
+    </style>
+
     <style name="TextView.Main.Centred" parent="TextView.Main">
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="TextView.Main.Medium" parent="TextView.Main">
+    <style name="TextView.Medium" parent="TextView.Main">
         <item name="android:textSize">@dimen/sp_13</item>
+    </style>
+
+    <style name="TextView.Medium.Secondary" parent="TextView.Medium">
+        <item name="android:textColor">@color/hint_text_color_secondary</item>
+    </style>
+
+    <style name="TextView.Medium.Bold" parent="TextView.Medium">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 
     <style name="TextView.Main.Bold" parent="TextView.Main">
@@ -84,6 +97,7 @@
     </style>
 
     <style name="ToolbarStyle">
+        <item name="android:background">@color/background_secondary</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_56</item>
     </style>
@@ -139,5 +153,32 @@
         <item name="android:windowEnterAnimation">@null</item>
         <item name="android:windowExitAnimation">@null</item>
     </style>
+
+    <style name="ImageButton.Action" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/dp_40</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="ImageButton.Action.Small" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/dp_16</item>
+        <item name="android:layout_height">@dimen/dp_16</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="EditText.Search" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:paddingStart">@dimen/dp_8</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingEnd">@dimen/dp_16</item>
+        <item name="android:textColorHint">@color/hint_text_color_secondary</item>
+        <item name="android:textSize">@dimen/sp_16</item>
+    </style>
+
 
 </resources>

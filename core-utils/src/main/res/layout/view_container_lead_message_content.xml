@@ -39,7 +39,7 @@
 
     <TextView
         android:id="@+id/view_container_lead_message_content__tv_author"
-        style="@style/TextView.Main.Medium"
+        style="@style/TextView.Medium"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/dp_18"
         android:layout_marginLeft="@dimen/dp_64"
