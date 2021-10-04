@@ -1,5 +1,5 @@
 # SimpleChat
-
+Nikita Kubov, group 3530202/90201
 My pet project
 
 Current state of the project readiness:
