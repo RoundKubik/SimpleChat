@@ -1,11 +1,20 @@
 # SimpleChat
+------------------------------------------------------------------------------
 Nikita Kubov, group 3530202/90201
+------------------------------------------------------------------------------
 My pet project
 
 Current state of the project readiness:
 
 30% of 100%
 [#################--------------------------------------]
+------------------------------------------------------------------------------
+A simple chat application that will provide the following features:
+- The ability to search for any chat freely available.
+- Conduct correspondence both in private messages and in chats.
+- The ability to flexibly customize the profile
+
+------------------------------------------------------------------------------
 
 This project should show my ability to work with: 
 - Сlean architecture
@@ -19,7 +28,5 @@ This project should show my ability to work with:
 
 Plans:
 In the future I plan to set up work with the database, message notifications, and all other logic that does not concern Ui
-
-I apologize for not being able to finish the project on time, there were health problems for a long time, and the last week I was sick.
 
 ![image](https://user-images.githubusercontent.com/79904110/133834557-8282d959-59a6-4aa3-9a76-fe0f61852110.png)
