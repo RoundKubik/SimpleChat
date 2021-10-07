@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModelProvider
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
-import ru.kubov.core_utils.presentation.viewmodel.ViewModelKey
-import ru.kubov.core_utils.presentation.viewmodel.ViewModelModule
+import com.kubov.core_di.presentation.viewmodel.ViewModelKey
+import com.kubov.core_di.presentation.viewmodel.ViewModelModule
 import ru.kubov.feature_main_api.navigation.MainFeatureRouter
 import ru.kubov.feature_main_impl.presentation.profile.ProfileViewModel
 

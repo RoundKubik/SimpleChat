@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.RelativeLayout">
+
+    <View
+        android:id="@+id/view_forwarded_content_view__left_divider"
+        android:layout_width="@dimen/dp_2"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/primary_highlight_color" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/view_forwarded_content_view__sdv_avatar"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_36"
+        android:layout_marginStart="@dimen/dp_16"
+        app:actualImageScaleType="focusCrop"
+        app:fadeDuration="0"
+        app:placeholderImage="@color/background_secondary"
+        app:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/view_forwarded_content_view__sdv_nickname"
+        style="@style/TextView.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_36"
+        android:layout_toEndOf="@id/view_forwarded_content_view__sdv_avatar"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/dp_8"
+        tools:text="roundkubik test work" />
+
+    <com.kuboc.core_ui.presentation.view.message.content.TextContentView
+        android:id="@+id/view_forwarded_content_view__tcv_text_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_forwarded_content_view__sdv_avatar"
+        android:layout_marginStart="@dimen/dp_16"
+        android:visibility="gone" />
+
+    <com.kuboc.core_ui.presentation.view.message.content.ImageTextContentView
+        android:id="@+id/view_forwarded_content_view__icv_image_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view_forwarded_content_view__sdv_avatar"
+        android:layout_marginStart="@dimen/dp_16"
+        android:visibility="gone" />
+</merge>

@@ -37,9 +37,12 @@ android {
 }
 
 dependencies {
+
     implementation project(":feature-main-api")
     implementation project(":module-injection")
     implementation project(":core-utils")
+    implementation project(":core-ui")
+    implementation project(":core-di")
 
     // dagger dep
     implementation daggerDep

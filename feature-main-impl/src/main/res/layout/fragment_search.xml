@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ru.kubov.core_utils.presentation.view.search.SearchToolbar
+    <com.kuboc.core_ui.presentation.view.search.SearchToolbar
         android:id="@+id/frg_search__st_toolbar_search"
         style="@style/ToolbarStyle" />
 
