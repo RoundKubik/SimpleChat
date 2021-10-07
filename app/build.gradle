@@ -42,6 +42,8 @@ dependencies {
     implementation project(":core-utils")
     implementation project(":core-db-api")
     implementation project(":core-db-impl")
+    implementation project(":core-di")
+    implementation project(":core-ui")
     implementation project(":core-network-api")
     implementation project(":core-network-impl")
     implementation project(":feature-main-api")

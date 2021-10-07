@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:windowSoftInputMode="adjustResize"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <ViewStub
+        android:id="@+id/view_chat_input__vs_reply_message"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone" />
+
+    <FrameLayout
+        android:id="@+id/view_chat_input__fl_messages_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/view_chat_input__iv_take_picture"
+            android:layout_width="@dimen/dp_64"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_12"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_photo_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+
+        <ImageView
+            android:id="@+id/view_chat_input__iv_send_message"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="right|bottom"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="@dimen/dp_4"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_send_mail_24"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.kuboc.core_ui.presentation.view.SelectableEditText
+            android:id="@+id/view_chat_input__et_message_input"
+            style="@style/EditText.MessagesInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_64"
+            android:layout_marginRight="@dimen/dp_58" />
+
+    </FrameLayout>
+
+</merge>

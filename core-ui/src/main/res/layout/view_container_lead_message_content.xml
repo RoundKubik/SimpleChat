@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="android.widget.FrameLayout">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/view_container_lead_message_content__sdv_avatar"
+        android:layout_width="@dimen/dp_40"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_2"
+        app:actualImageScaleType="focusCrop"
+        app:fadeDuration="0"
+        app:placeholderImage="@color/background_secondary"
+        app:roundAsCircle="true" />
+
+    <View
+        android:id="@+id/view_container_lead_message_content__view_pin_online"
+        android:layout_width="@dimen/dp_10"
+        android:layout_height="@dimen/dp_10"
+        android:layout_marginLeft="@dimen/dp_42"
+        android:layout_marginTop="@dimen/dp_32"
+        android:background="@drawable/background_pin_online"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/view_container_lead_message_content__tv_date"
+        style="@style/TextView.SecondaryMedium.Hint"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_18"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginRight="@dimen/dp_12"
+        android:visibility="visible"
+        tools:text="8:30 PM" />
+
+    <TextView
+        android:id="@+id/view_container_lead_message_content__tv_author"
+        style="@style/TextView.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_18"
+        android:layout_marginLeft="@dimen/dp_64"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginRight="@dimen/dp_76"
+        tools:text="roundkubik" />
+
+    <ViewStub
+        android:id="@+id/view_container_lead_message_content__vs_view_stub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_64"
+        android:layout_marginTop="@dimen/dp_22"
+        android:layout_marginRight="@dimen/dp_12" />
+
+</merge>

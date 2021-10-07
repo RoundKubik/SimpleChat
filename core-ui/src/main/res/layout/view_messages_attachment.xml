@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/view_messages_attachment__tv_header_new_message"
+        style="@style/TextView.Main.Centred"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:paddingTop="@dimen/dp_24"
+        android:paddingBottom="@dimen/dp_6"
+        android:text="@string/new_messages"
+        android:textSize="@dimen/sp_13"
+        android:visibility="gone" />
+
+    <com.kuboc.core_ui.presentation.view.message.QuotedChatMessageView
+        android:id="@+id/view_messages_attachment__qcmv__quoted_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_6"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/view_messages_attachment__tv_sending_message_failed"
+        style="@style/TextView.LeftCentred"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:layout_marginTop="@dimen/dp_6"
+        android:text="@string/error_sending_message"
+        android:visibility="gone" />
+
+</LinearLayout>

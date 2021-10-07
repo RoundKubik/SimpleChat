@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/ToolbarStyle"
-    android:background="@color/background_secondary">
+    style="@style/ToolbarStyle">
 
     <ImageView
         android:id="@+id/include_chat_toolbar__iv_icon_back"

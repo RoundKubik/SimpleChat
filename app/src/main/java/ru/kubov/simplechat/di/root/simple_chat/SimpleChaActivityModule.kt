@@ -3,11 +3,11 @@ package ru.kubov.simplechat.di.root.simple_chat
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.kubov.core_di.presentation.viewmodel.ViewModelKey
+import com.kubov.core_di.presentation.viewmodel.ViewModelModule
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
-import ru.kubov.core_utils.presentation.viewmodel.ViewModelKey
-import ru.kubov.core_utils.presentation.viewmodel.ViewModelModule
 import ru.kubov.simplechat.root.presentation.simple_chat.SimpleChatViewModel
 
 @Module(

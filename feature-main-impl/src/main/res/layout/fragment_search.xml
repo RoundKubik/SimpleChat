@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kuboc.core_ui.presentation.view.search.SearchToolbar
+        android:id="@+id/frg_search__st_toolbar_search"
+        style="@style/ToolbarStyle" />
+
+    <View
+        android:id="@+id/frg_search__divider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_2"
+        android:layout_below="@id/frg_search__st_toolbar_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/frg_search__rv_chats"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frg_search__divider" />
+
+</RelativeLayout>
