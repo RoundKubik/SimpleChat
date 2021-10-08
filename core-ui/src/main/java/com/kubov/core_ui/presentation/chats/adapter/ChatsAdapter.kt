@@ -10,7 +10,7 @@ import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
 
 // TODO: 02.10.2021 add documentation
-class ChatsAdapter(private val onChatClick: ((Chat?) -> Unit)? = null) : ListAdapter<Chat, ChatsAdapter.ChatViewHolder>(
+open class ChatsAdapter(private val onChatClick: ((Chat?) -> Unit)? = null) : ListAdapter<Chat, ChatsAdapter.ChatViewHolder>(
     ChatDiffCallback()
 ) {
 
