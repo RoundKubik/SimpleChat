@@ -7,6 +7,7 @@
         <entry key="core-ui/src/main/res/layout/fragment_search.xml" value="0.13402061855670103" />
         <entry key="core-ui/src/main/res/layout/item_chat_info.xml" value="0.17604166666666668" />
         <entry key="core-ui/src/main/res/layout/view_chat.xml" value="0.2265625" />
+        <entry key="core-ui/src/main/res/layout/view_search_chat.xml" value="0.2265625" />
       </map>
     </option>
   </component>
