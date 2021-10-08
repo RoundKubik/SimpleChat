@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ru.kubov.core_utils.domain.models.Chat
 import ru.kubov.feature_main_impl.databinding.FragmentSearchBinding
-import ru.kubov.feature_main_impl.presentation.search.adapter.ChatsAdapter
+import com.kubov.core_ui.presentation.chats.adapter.ChatsAdapter
 
 /**
  * Class provides search logic

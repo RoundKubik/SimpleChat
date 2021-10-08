@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="@dimen/dp_8"
+    android:background="?selectableItemBackground">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/item_chat_info__sdv_chat_logo"
+        android:layout_width="@dimen/dp_56"
+        android:layout_height="@dimen/dp_56"
+        android:layout_margin="@dimen/dp_8"
+        app:actualImageScaleType="focusCrop"
+        app:fadeDuration="0"
+        app:placeholderImage="@color/background_secondary"
+        app:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/item_chat_info__tv_chat_title"
+        style="@style/TextView.Medium.Bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_toEndOf="@id/item_chat_info__sdv_chat_logo"
+        tools:text="This is chat title" />
+
+    <TextView
+        android:id="@+id/item_chat_info__tv_chat_description"
+        style="@style/TextView.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_chat_info__tv_chat_title"
+        android:layout_marginStart="@dimen/dp_72"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:visibility="gone"
+        tools:text="This chat was created to plan meetings with friends"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/item_chat_info__tv_chat_short_info"
+        style="@style/TextView.Medium.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_chat_info__tv_chat_description"
+        android:layout_marginStart="@dimen/dp_72"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        tools:text="Чат 3 участника" />
+
+</RelativeLayout>

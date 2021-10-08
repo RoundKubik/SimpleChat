@@ -15,7 +15,7 @@
         android:src="@drawable/ic_arrow_left_24"
         android:visibility="visible" />
 
-    <com.kuboc.core_ui.presentation.view.search.SearchView
+    <com.kubov.core_ui.presentation.view.search.SearchView
         android:id="@+id/view_search_toolbar__sv_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

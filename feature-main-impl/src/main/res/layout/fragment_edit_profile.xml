@@ -54,7 +54,7 @@
                 android:layout_marginTop="@dimen/dp_24"
                 android:text="@string/nickname" />
 
-            <com.kuboc.core_ui.presentation.view.NickNameEditText
+            <com.kubov.core_ui.presentation.view.NickNameEditText
                 android:id="@+id/frg_edit_profile_et_edit_nick_name"
                 style="@style/EditText.Input"
                 android:layout_width="match_parent"
@@ -70,7 +70,7 @@
                 android:layout_marginTop="@dimen/dp_24"
                 android:text="@string/about_self" />
 
-            <com.kuboc.core_ui.presentation.view.NickNameEditText
+            <com.kubov.core_ui.presentation.view.NickNameEditText
                 android:id="@+id/frg_edit_profile_et_edit_bio"
                 style="@style/EditText.Input"
                 android:layout_width="match_parent"
