@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_56">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/item_search_lottie_loader__lav_loader"
+        android:layout_width="@dimen/dp_36"
+        android:layout_height="@dimen/dp_12"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+</FrameLayout>

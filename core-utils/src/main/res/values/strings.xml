@@ -39,5 +39,8 @@
     <string name="friday_short">Пт</string>
     <string name="saturday_short">Сб</string>
     <string name="sunday_short">Вс</string>
-    <string name="chats_search">Поиск чатов...</string>
+    <string name="chats_search">Поиск чатов…</string>
+
+    <string name="user_chats">Ваши чаты</string>
+    <string name="recommendations_chats">Рекомендации</string>
 </resources>
