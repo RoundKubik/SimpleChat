@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.kubov.core_utils.extensions.setDebounceClickListener
-import com.kuboc.core_ui.presentation.view.StyledToastSimpleChat
+import com.kubov.core_ui.presentation.view.StyledToastSimpleChat
 import ru.kubov.feature_main_impl.R
 import ru.kubov.feature_main_impl.databinding.FragmentSettingsDataAndStorageBinding
 import ru.kubov.feature_main_impl.databinding.IncludeBaseToolbarBinding

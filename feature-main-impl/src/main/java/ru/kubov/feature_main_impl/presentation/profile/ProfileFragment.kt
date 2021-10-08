@@ -10,9 +10,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.kuboc.core_ui.presentation.view.SheetDialog
+import com.kubov.core_ui.presentation.view.SheetDialog
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.kuboc.core_ui.databinding.DialogDoubleChoiseBinding
+import com.kubov.core_ui.databinding.DialogDoubleChoiseBinding
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
 import ru.kubov.feature_main_impl.R

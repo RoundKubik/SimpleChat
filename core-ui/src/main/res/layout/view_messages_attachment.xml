@@ -17,7 +17,7 @@
         android:textSize="@dimen/sp_13"
         android:visibility="gone" />
 
-    <com.kuboc.core_ui.presentation.view.message.QuotedChatMessageView
+    <com.kubov.core_ui.presentation.view.message.QuotedChatMessageView
         android:id="@+id/view_messages_attachment__qcmv__quoted_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
