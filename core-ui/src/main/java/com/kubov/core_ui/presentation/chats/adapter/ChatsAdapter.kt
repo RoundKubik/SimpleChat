@@ -37,12 +37,7 @@ open class ChatsAdapter(private val onChatClick: ((Chat?) -> Unit)? = null) : Li
         }
 
         fun bindChat(chat: Chat) {
-            with(binding) {
-                itemChatInfoSdvChatLogo.showImage(chat.imageLogo)
-                itemChatInfoTvChatShortInfo.text = chat.chatShortInfo
-                itemChatInfoTvChatDescription.text = chat.chatDescription
-                itemChatInfoTvChatTitle.text = chat.chatTitle
-            }
+
         }
     }
 }
