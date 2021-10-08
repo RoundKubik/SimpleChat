@@ -1,16 +1,18 @@
-package ru.kubov.feature_main_impl.presentation.search.adapter
+package com.kubov.core_ui.presentation.chats.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.kubov.core_ui.databinding.ItemChatInfoBinding
 import ru.kubov.core_utils.domain.models.Chat
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
-import ru.kubov.feature_main_impl.databinding.ItemChatInfoBinding
 
 // TODO: 02.10.2021 add documentation
-class ChatsAdapter(private val onChatClick: ((Chat?) -> Unit)? = null) : ListAdapter<Chat, ChatsAdapter.ChatViewHolder>(ChatDiffCallback()) {
+class ChatsAdapter(private val onChatClick: ((Chat?) -> Unit)? = null) : ListAdapter<Chat, ChatsAdapter.ChatViewHolder>(
+    ChatDiffCallback()
+) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         val binding = ItemChatInfoBinding.inflate(LayoutInflater.from(parent.context), parent, false)

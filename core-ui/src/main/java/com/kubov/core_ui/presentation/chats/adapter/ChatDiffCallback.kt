@@ -1,4 +1,4 @@
-package ru.kubov.feature_main_impl.presentation.search.adapter
+package com.kubov.core_ui.presentation.chats.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import ru.kubov.core_utils.domain.models.Chat
