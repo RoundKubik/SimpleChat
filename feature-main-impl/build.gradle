@@ -60,6 +60,12 @@ dependencies {
     // impementation circleimageview
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    // Image picker
     implementation imagePickerDep
+
+    // Facebook fresco image loader
     implementation frescoDep
+
+    // Lottie dep
+    implementation lottieDep
 }
