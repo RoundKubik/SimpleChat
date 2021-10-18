@@ -19,7 +19,6 @@
         android:layout_height="@dimen/dp_36"
         android:layout_centerVertical="true"
         android:layout_gravity="center_vertical"
-        android:layout_marginHorizontal="@dimen/dp_8"
         android:visibility="gone"/>
 
     <ImageView

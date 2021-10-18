@@ -113,7 +113,7 @@ class CompositeToolbar<LA : View, CA : View, RA : View> : FrameLayout {
         }
         if (rightArea != null) {
             val rightAreaLayoutParams = rightArea!!.layoutParams as MarginLayoutParams
-            layoutParamsCenter.marginEnd = rightAreaLayoutParams.marginStart + rightAreaLayoutParams.width
+            layoutParamsCenter.marginEnd = rightAreaLayoutParams.marginEnd + rightAreaLayoutParams.width
         }
         centerArea!!.layoutParams = layoutParamsCenter
     }
