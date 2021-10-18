@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.kubov.core_ui.presentation.view.toolbar.CompositeToolbar
+        android:id="@+id/frg_chat_info__ct_toolbar"
+        style="@style/ToolbarStyle" />
+
     <androidx.core.widget.NestedScrollView
-        style="@style/VerticalScrollbars"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/frg_chat_info__ct_toolbar"
         android:fillViewport="true"
+        style="@style/VerticalScrollbars"
         android:overScrollMode="ifContentScrolls">
 
         <LinearLayout
@@ -17,49 +21,45 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/frg_profile__iv_avatar"
-                android:layout_width="@dimen/dp_144"
-                android:layout_height="@dimen/dp_144"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/frg_chat_info__civ_chat_logo"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_120"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp_36"
-                fresco:roundBottomEnd="true"
-                fresco:roundBottomStart="true"
-                fresco:roundTopEnd="true"
-                fresco:roundTopStart="true"
-                fresco:roundedCornerRadius="@dimen/dp_24"
-                fresco:roundingBorderWidth="@dimen/dp_2" />
+                android:layout_marginTop="@dimen/dp_24" />
 
             <TextView
-                android:id="@+id/frg_profile__tv_nickname"
-                style="@style/TextView.Bold"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_32"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="@dimen/dp_16"
-                android:text="RoundKubik"
-                tools:text="RoundKubik" />
+                android:id="@+id/frg_chat_info__tv_chat_name"
+                style="@style/TextView.H1.Bold.Centred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16"
+                tools:text="Chat Name)" />
 
             <TextView
-                android:id="@+id/frg_profile__tv_bio"
-                style="@style/TextView.Bold"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/dp_32"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="@dimen/dp_16"
-                android:text="Android dev"
-                tools:text="RoundKubik" />
+                android:id="@+id/frg_chat_info__tv_chat_description"
+                style="@style/TextView.Main.Centred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                tools:text="Chat description" />
+
 
             <TextView
                 style="@style/TextView.SettingTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/dp_18"
                 android:layout_marginTop="@dimen/dp_24"
-                android:text="@string/account" />
+                android:text="@string/content" />
 
             <include
                 android:id="@+id/frg_profile__include_edit_profile"
                 layout="@layout/include_profile_menu_option" />
+
+            <include
+                android:id="@+id/frg_profile__include_theme"
+                layout="@layout/include_profile_menu_option" />
+
 
             <TextView
                 style="@style/TextView.SettingTitle"
@@ -77,9 +77,11 @@
                 layout="@layout/include_profile_menu_option" />
 
             <include
-                android:id="@+id/frg_profile__include_logout"
+                android:id="@+id/frg_profile__include_data_and_storage"
                 layout="@layout/include_profile_menu_option" />
 
         </LinearLayout>
+
     </androidx.core.widget.NestedScrollView>
+
 </RelativeLayout>
