@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SimpleChat.iml" filepath="$PROJECT_DIR$/.idea/modules/SimpleChat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/SimpleChat.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/SimpleChat.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-db-api/SimpleChat.core-db-api.iml" filepath="$PROJECT_DIR$/.idea/modules/core-db-api/SimpleChat.core-db-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-db-impl/SimpleChat.core-db-impl.iml" filepath="$PROJECT_DIR$/.idea/modules/core-db-impl/SimpleChat.core-db-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-di/SimpleChat.core-di.iml" filepath="$PROJECT_DIR$/.idea/modules/core-di/SimpleChat.core-di.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-network-api/SimpleChat.core-network-api.iml" filepath="$PROJECT_DIR$/.idea/modules/core-network-api/SimpleChat.core-network-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-network-impl/SimpleChat.core-network-impl.iml" filepath="$PROJECT_DIR$/.idea/modules/core-network-impl/SimpleChat.core-network-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-ui/SimpleChat.core-ui.iml" filepath="$PROJECT_DIR$/.idea/modules/core-ui/SimpleChat.core-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-utils/SimpleChat.core-utils.iml" filepath="$PROJECT_DIR$/.idea/modules/core-utils/SimpleChat.core-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature-main-api/SimpleChat.feature-main-api.iml" filepath="$PROJECT_DIR$/.idea/modules/feature-main-api/SimpleChat.feature-main-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature-main-impl/SimpleChat.feature-main-impl.iml" filepath="$PROJECT_DIR$/.idea/modules/feature-main-impl/SimpleChat.feature-main-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module-injection/SimpleChat.module-injection.iml" filepath="$PROJECT_DIR$/.idea/modules/module-injection/SimpleChat.module-injection.iml" />
+    </modules>
+  </component>
+</project>
