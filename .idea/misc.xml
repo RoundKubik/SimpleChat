@@ -11,7 +11,6 @@
         <entry key="core-ui/src/main/res/layout/view_composite_toolbar.xml" value="0.36277173913043476" />
         <entry key="core-ui/src/main/res/layout/view_container_lead_message_content.xml" value="0.36277173913043476" />
         <entry key="core-ui/src/main/res/layout/view_messages_attachment.xml" value="0.36277173913043476" />
-        <entry key="core-ui/src/main/res/layout/view_search_chat.xml" value="0.2265625" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_chat_info.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_chats.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_search.xml" value="0.378125" />
@@ -20,6 +19,7 @@
         <entry key="feature-main-impl/src/main/res/layout/include_main_toolbar.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/include_profile_menu_option.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/include_triple_itmes_toolbar.xml" value="0.2" />
+        <entry key="core-ui/src/main/res/layout/view_search_chat.xml" value="0.2265625" />
       </map>
     </option>
   </component>

@@ -16,6 +16,7 @@ import com.kubov.core_ui.presentation.chats.adapter.ChatsAdapter
 import com.kubov.core_ui.presentation.view.search.SearchView
 import com.kubov.core_ui.presentation.view.toolbar.CompositeToolbar
 import ru.kubov.core_utils.extensions.dpToPx
+import javax.inject.Inject
 
 /**
  * Class provides search logic
@@ -23,10 +24,13 @@ import ru.kubov.core_utils.extensions.dpToPx
  */
 class SearchFragment : Fragment() {
 
+    @Inject
+    lateinit var viewModel: SearchViewModel
+
     private var _binding: FragmentSearchBinding? = null
     private val binding get() = _binding!!
 
-    lateinit var chatsAdapter: ChatsAdapter
+    private lateinit var chatsAdapter: ChatsAdapter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
@@ -62,6 +66,7 @@ class SearchFragment : Fragment() {
 
     private fun initChatRecycler() {
         chatsAdapter = ChatsAdapter()
+        // TODO: 13.10.2021 rwmove mocking data 
         chatsAdapter.submitList(
             listOf(
                 Chat(
