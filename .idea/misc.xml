@@ -3,7 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2324074074074074" />
+        <entry key="core-ui/src/main/res/layout/fragment_search.xml" value="0.13402061855670103" />
         <entry key="core-ui/src/main/res/layout/item_chat_info.xml" value="0.17604166666666668" />
+        <entry key="core-ui/src/main/res/layout/item_search_lottie_loader.xml" value="0.25677083333333334" />
+        <entry key="core-ui/src/main/res/layout/view_chat.xml" value="0.2265625" />
+        <entry key="core-ui/src/main/res/layout/view_composite_toolbar.xml" value="0.36277173913043476" />
+        <entry key="core-ui/src/main/res/layout/view_container_lead_message_content.xml" value="0.36277173913043476" />
+        <entry key="core-ui/src/main/res/layout/view_messages_attachment.xml" value="0.36277173913043476" />
+        <entry key="core-ui/src/main/res/layout/view_search_chat.xml" value="0.2265625" />
+        <entry key="feature-main-impl/src/main/res/layout/fragment_chat_info.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/fragment_chats.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/fragment_search.xml" value="0.378125" />
+        <entry key="feature-main-impl/src/main/res/layout/include_base_toolbar.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/include_chat_toolbar.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/include_main_toolbar.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/include_profile_menu_option.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/include_triple_itmes_toolbar.xml" value="0.2" />
       </map>
     </option>
   </component>
