@@ -17,7 +17,7 @@ import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.core_utils.extensions.showImage
 import ru.kubov.feature_main_impl.R
 import ru.kubov.feature_main_impl.databinding.FragmentProfileBinding
-import ru.kubov.feature_main_impl.databinding.IncludeProfileMenuOptionBinding
+import ru.kubov.feature_main_impl.databinding.IncludeMenuOptionBinding
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponent
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
 import javax.inject.Inject
@@ -39,16 +39,16 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
-    private var _includeEditProfileBinding: IncludeProfileMenuOptionBinding? = null
+    private var _includeEditProfileBinding: IncludeMenuOptionBinding? = null
     private val includeEditProfileBinding get() = _includeEditProfileBinding!!
 
-    private var _includeThemeBinding: IncludeProfileMenuOptionBinding? = null
+    private var _includeThemeBinding: IncludeMenuOptionBinding? = null
     private val includeThemeBinding get() = _includeThemeBinding!!
 
-    private var _includeDataAndStorageBinding: IncludeProfileMenuOptionBinding? = null
+    private var _includeDataAndStorageBinding: IncludeMenuOptionBinding? = null
     private val includeDataAndStorageBinding get() = _includeDataAndStorageBinding!!
 
-    private var _includeLogoutBinding: IncludeProfileMenuOptionBinding? = null
+    private var _includeLogoutBinding: IncludeMenuOptionBinding? = null
     private val includeLogoutBinding get() = _includeLogoutBinding!!
 
     private val logoutDialog by lazy {
@@ -113,11 +113,11 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         inject()
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        _includeEditProfileBinding = IncludeProfileMenuOptionBinding.bind(binding.frgProfileIncludeEditProfile.root)
-        _includeThemeBinding = IncludeProfileMenuOptionBinding.bind(binding.frgProfileIncludeTheme.root)
+        _includeEditProfileBinding = IncludeMenuOptionBinding.bind(binding.frgProfileIncludeEditProfile.root)
+        _includeThemeBinding = IncludeMenuOptionBinding.bind(binding.frgProfileIncludeTheme.root)
         _includeDataAndStorageBinding =
-            IncludeProfileMenuOptionBinding.bind(binding.frgProfileIncludeDataAndStorage.root)
-        _includeLogoutBinding = IncludeProfileMenuOptionBinding.bind(binding.frgProfileIncludeLogout.root)
+            IncludeMenuOptionBinding.bind(binding.frgProfileIncludeDataAndStorage.root)
+        _includeLogoutBinding = IncludeMenuOptionBinding.bind(binding.frgProfileIncludeLogout.root)
         return binding.root
     }
 
@@ -130,8 +130,8 @@ class ProfileFragment : Fragment() {
 
     private fun initMenuOptions() {
         with(includeEditProfileBinding) {
-            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_edit_24)
-            includeProfileMenuOptionsTvTitle.text = getString(R.string.edit_profile)
+            includeMenuOptionsIvIcon.setImageResource(R.drawable.ic_edit_24)
+            includeMenuOptionsTvTitle.text = getString(R.string.edit_profile)
 
             root.setDebounceClickListener {
                 viewModel.openEditProfileScreen()
@@ -139,8 +139,8 @@ class ProfileFragment : Fragment() {
         }
 
         with(includeThemeBinding) {
-            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_choice_theme_24)
-            includeProfileMenuOptionsTvTitle.text = getString(R.string.theme)
+            includeMenuOptionsIvIcon.setImageResource(R.drawable.ic_choice_theme_24)
+            includeMenuOptionsTvTitle.text = getString(R.string.theme)
 
             root.setDebounceClickListener {
                 settingsThemeDialog.show()
@@ -148,8 +148,8 @@ class ProfileFragment : Fragment() {
         }
 
         with(includeDataAndStorageBinding) {
-            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_data_24)
-            includeProfileMenuOptionsTvTitle.text = getString(R.string.data_and_storage)
+            includeMenuOptionsIvIcon.setImageResource(R.drawable.ic_data_24)
+            includeMenuOptionsTvTitle.text = getString(R.string.data_and_storage)
 
             root.setDebounceClickListener {
                 viewModel.openSettingsStorageAndDataScreen()
@@ -157,8 +157,8 @@ class ProfileFragment : Fragment() {
         }
 
         with(includeLogoutBinding) {
-            includeProfileMenuOptionsIvIcon.setImageResource(R.drawable.ic_door_24)
-            includeProfileMenuOptionsTvTitle.text = getString(R.string.exit_from_profile)
+             includeMenuOptionsIvIcon.setImageResource(R.drawable.ic_door_24)
+             includeMenuOptionsTvTitle.text = getString(R.string.exit_from_profile)
 
             root.setDebounceClickListener {
                 logoutDialog.show()

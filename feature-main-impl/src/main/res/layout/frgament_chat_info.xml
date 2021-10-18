@@ -54,11 +54,11 @@
 
             <include
                 android:id="@+id/frg_profile__include_edit_profile"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
             <include
                 android:id="@+id/frg_profile__include_theme"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
 
             <TextView
@@ -70,15 +70,15 @@
 
             <include
                 android:id="@+id/frg_profile__include_theme"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
             <include
                 android:id="@+id/frg_profile__include_data_and_storage"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
             <include
                 android:id="@+id/frg_profile__include_data_and_storage"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
         </LinearLayout>
 

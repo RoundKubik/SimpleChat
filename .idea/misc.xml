@@ -21,6 +21,7 @@
         <entry key="feature-main-impl/src/main/res/layout/include_base_toolbar.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/include_chat_toolbar.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/include_main_toolbar.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/include_menu_option.xml" value="0.33" />
         <entry key="feature-main-impl/src/main/res/layout/include_profile_menu_option.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/include_triple_itmes_toolbar.xml" value="0.2" />
       </map>
