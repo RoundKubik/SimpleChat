@@ -13,7 +13,6 @@
         android:layout_marginStart="@dimen/dp_8"
         android:visibility="gone" />
 
-
     <ViewStub
         android:id="@+id/view_composite_toolbar__vs_center_area"
         android:layout_width="match_parent"

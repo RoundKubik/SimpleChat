@@ -46,14 +46,16 @@ class SearchFragment : Fragment() {
     private fun initToolbar() {
 
         val newSearchView = SearchView(requireContext())
-        binding.frgSearchStToolbarSearch.setCenterArea(
+        binding.frgSearchStToolbarSearch.replaceLeftArea(newSearchView)
+        val searchView2 = SearchView(requireContext())
+        binding.frgSearchStToolbarSearch.replaceCenterArea(searchView2)
+        val searchView3 = SearchView(requireContext())
+        binding.frgSearchStToolbarSearch.replaceRightArea(searchView3)
+        /*binding.frgSearchStToolbarSearch.setCenterArea(
             newSearchView,
             FrameLayout.LayoutParams(requireContext().dpToPx(100), ViewGroup.LayoutParams.WRAP_CONTENT).apply {
                 gravity = Gravity.CENTER_VERTICAL
-            })
-
-        val earchView = SearchView(requireContext())
-        binding.frgSearchStToolbarSearch.setCenterArea(earchView)
+            })*/
 
 
     }
