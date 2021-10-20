@@ -44,4 +44,15 @@
     <string name="user_chats">Ваши чаты</string>
     <string name="recommendations_chats">Рекомендации</string>
     <string name="content">Контент</string>
+
+    <string name="members">Участники</string>
+    <string name="media">Медиа</string>
+    <string name="privacy">Приватность</string>
+
+    <string name="private_channel">Приватный</string>
+    <string name="public_channel">Публичный</string>
+
+    <string name="leave_channel">Покинуть</string>
+
+    <string name="notifications">Уведомления</string>
 </resources>

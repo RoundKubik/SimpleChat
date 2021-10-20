@@ -9,11 +9,11 @@
         style="@style/ToolbarStyle" />
 
     <androidx.core.widget.NestedScrollView
+        style="@style/VerticalScrollbars"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/frg_chat_info__ct_toolbar"
         android:fillViewport="true"
-        style="@style/VerticalScrollbars"
         android:overScrollMode="ifContentScrolls">
 
         <LinearLayout
@@ -53,11 +53,11 @@
                 android:text="@string/content" />
 
             <include
-                android:id="@+id/frg_profile__include_edit_profile"
+                android:id="@+id/frg_chat_info__include_media"
                 layout="@layout/include_menu_option" />
 
             <include
-                android:id="@+id/frg_profile__include_theme"
+                android:id="@+id/frg_chat_info__include_members"
                 layout="@layout/include_menu_option" />
 
 
@@ -69,15 +69,15 @@
                 android:text="@string/settings" />
 
             <include
-                android:id="@+id/frg_profile__include_theme"
+                android:id="@+id/frg_chat_info__include_notifications"
                 layout="@layout/include_menu_option" />
 
             <include
-                android:id="@+id/frg_profile__include_data_and_storage"
+                android:id="@+id/frg_chat_info__include_privacy"
                 layout="@layout/include_menu_option" />
 
             <include
-                android:id="@+id/frg_profile__include_data_and_storage"
+                android:id="@+id/frg_chat_info__include_leave"
                 layout="@layout/include_menu_option" />
 
         </LinearLayout>
