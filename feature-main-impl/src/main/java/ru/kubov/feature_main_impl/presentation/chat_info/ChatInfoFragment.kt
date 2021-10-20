@@ -22,6 +22,7 @@ import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
 import javax.inject.Inject
 import com.github.dhaval2404.imagepicker.ImagePicker
 import ru.kubov.core_utils.domain.models.Chat
+import ru.kubov.core_utils.domain.models.ChatInfo
 import ru.kubov.core_utils.extensions.addCircleRipple
 import ru.kubov.core_utils.extensions.showImage
 
@@ -61,7 +62,7 @@ class ChatInfoFragment : Fragment() {
 
             if (resultCode == Activity.RESULT_OK) {
                 val fileUri = data?.data!!
-                binding.frgChatInfoCivChatLogo.showImage(fileUri)
+                binding.frgChatInfoSdvChatLogo.showImage(fileUri)
             }
         }
 
@@ -96,6 +97,7 @@ class ChatInfoFragment : Fragment() {
 
     private fun initMembersSettingsOption() {
         includeMembersMenuOptionBinging.includeMenuOptionsTvTitle.text = getString(R.string.members)
+        includeMembersMenuOptionBinging.includeMenuOptionTvContentInfo.isVisible = true
     }
 
     private fun initMediaSettingsOption() {
@@ -116,7 +118,7 @@ class ChatInfoFragment : Fragment() {
     }
 
     private fun initChatLogo() {
-        binding.frgChatInfoCivChatLogo.setDebounceClickListener {
+        binding.frgChatInfoSdvChatLogo.setDebounceClickListener {
             ImagePicker.with(this).createIntent {
                 startForPickChatImageResult.launch(it)
             }
@@ -157,8 +159,28 @@ class ChatInfoFragment : Fragment() {
         binding.frgChatInfoCtToolbar.replaceRightArea(iconEdit)
     }
 
-    private fun showChatInfo(chat: Chat) {
+    private fun showChatInfo(chat: ChatInfo) {
+        binding.frgChatInfoCtToolbar.rightArea?.isVisible = chat.isAdmin
+        (binding.frgChatInfoCtToolbar.centerArea as TextView).text = if (chat.isTread) {
+            getString(R.string.tread)
+        } else {
+            chat.chatTitle
+        }
 
+        binding.frgChatInfoSdvChatLogo.showImage(chat.chatLogo)
+        binding.frgChatInfoTvChatName.text = chat.chatTitle
+        binding.frgChatInfoTvChatDescription.text = if ( chat.chatDescription == null) {
+            getString(R.string.add_description)
+        } else {
+            chat.chatDescription
+        }
+
+        includeMembersMenuOptionBinging.includeMenuOptionTvContentInfo.text = chat.members.toString()
+        includePrivacyMenuOptionBinding.includeMenuOptionTvContentInfo.text = if (chat.isPrivate) {
+            getString(R.string.private_channel)
+        } else {
+            getString(R.string.public_channel)
+        }
     }
 
     private fun inject() {

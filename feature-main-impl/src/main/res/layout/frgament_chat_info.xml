@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
             <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/frg_chat_info__civ_chat_logo"
+                android:id="@+id/frg_chat_info__sdv_chat_logo"
                 android:layout_width="@dimen/dp_120"
                 android:layout_height="@dimen/dp_120"
                 android:layout_gravity="center_horizontal"

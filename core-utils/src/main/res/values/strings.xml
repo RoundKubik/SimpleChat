@@ -55,4 +55,7 @@
     <string name="leave_channel">Покинуть</string>
 
     <string name="notifications">Уведомления</string>
+    <string name="tread">Тред</string>
+
+    <string name="add_description">Добавте описание</string>
 </resources>
