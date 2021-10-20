@@ -21,8 +21,8 @@ import ru.kubov.feature_main_impl.di.module.MainFeatureComponent
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
 import javax.inject.Inject
 import com.github.dhaval2404.imagepicker.ImagePicker
-import ru.kubov.core_utils.domain.models.Chat
 import ru.kubov.core_utils.domain.models.ChatInfo
+import ru.kubov.core_utils.domain.models.UserChatRole
 import ru.kubov.core_utils.extensions.addCircleRipple
 import ru.kubov.core_utils.extensions.showImage
 
@@ -81,12 +81,15 @@ class ChatInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+
+        mockdata()
     }
 
     private fun initViews() {
         initToolbar()
         initChatLogo()
         initScrollView()
+        initMainInfoViews()
 
         initMembersSettingsOption()
         initMediaSettingsOption()
@@ -96,8 +99,10 @@ class ChatInfoFragment : Fragment() {
     }
 
     private fun initMembersSettingsOption() {
-        includeMembersMenuOptionBinging.includeMenuOptionsTvTitle.text = getString(R.string.members)
-        includeMembersMenuOptionBinging.includeMenuOptionTvContentInfo.isVisible = true
+        with(  includeMembersMenuOptionBinging) {
+            includeMenuOptionsTvTitle.text = getString(ru.kubov.feature_main_impl.R.string.members)
+            includeMenuOptionTvContentInfo.isVisible = true
+        }
     }
 
     private fun initMediaSettingsOption() {
@@ -109,8 +114,11 @@ class ChatInfoFragment : Fragment() {
     }
 
     private fun initPrivacySettingsOption() {
-        includePrivacyMenuOptionBinding.includeMenuOptionsTvTitle.text = getString(R.string.privacy)
-        includePrivacyMenuOptionBinding.includeMenuOptionIvIconAction.isVisible = false
+        with(includePrivacyMenuOptionBinding) {
+            includeMenuOptionsTvTitle.text = getString(R.string.privacy)
+            includeMenuOptionIvIconAction.isVisible = false
+            includeMenuOptionTvContentInfo.isVisible = true
+        }
     }
 
     private fun initLeaveChannelSettingsOption() {
@@ -169,18 +177,34 @@ class ChatInfoFragment : Fragment() {
 
         binding.frgChatInfoSdvChatLogo.showImage(chat.chatLogo)
         binding.frgChatInfoTvChatName.text = chat.chatTitle
-        binding.frgChatInfoTvChatDescription.text = if ( chat.chatDescription == null) {
-            getString(R.string.add_description)
-        } else {
-            chat.chatDescription
+        if (!chat.chatDescription.isNullOrEmpty()) {
+            binding.frgChatInfoTvChatDescription.text = chat.chatDescription.toString()
         }
-
         includeMembersMenuOptionBinging.includeMenuOptionTvContentInfo.text = chat.members.toString()
         includePrivacyMenuOptionBinding.includeMenuOptionTvContentInfo.text = if (chat.isPrivate) {
             getString(R.string.private_channel)
         } else {
             getString(R.string.public_channel)
         }
+    }
+
+    private fun initMainInfoViews() {
+        binding.frgChatInfoTvChatDescription.text = getString(R.string.add_description)
+    }
+
+    private fun mockdata() {
+        showChatInfo(ChatInfo(
+            123,
+            "https://picsum.photos/seed/picsum/200/300",
+            "StolenChat",
+            "test chat with desctipyion",
+            true,
+            UserChatRole.Admin,
+            10,
+            10,
+            false
+
+        ))
     }
 
     private fun inject() {

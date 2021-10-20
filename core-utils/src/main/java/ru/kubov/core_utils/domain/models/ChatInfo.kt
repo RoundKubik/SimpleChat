@@ -6,7 +6,6 @@ data class ChatInfo(
     val chatLogo: String,
     val chatTitle: String,
     val chatDescription: String?,
-    val chatShortInfo: String,
     val isPrivate: Boolean,
     val role: UserChatRole?,
     val members: Long,
