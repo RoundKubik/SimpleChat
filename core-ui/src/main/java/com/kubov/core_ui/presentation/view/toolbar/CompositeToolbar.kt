@@ -16,15 +16,15 @@ import ru.kubov.core_utils.extensions.dpToPx
 class CompositeToolbar<LA : View, CA : View, RA : View> : FrameLayout {
 
     companion object {
-        const val STANDARD_END_MARGIN = 8
-        const val STANDARD_START_MARGIN = 8
-        const val STANDARD_LEFT_AREA_WIDTH = 36
-        const val STANDARD_RIGHT_AREA_WIDTH = 36
+        const val STANDARD_END_MARGIN = 16
+        const val STANDARD_START_MARGIN = 16
+        const val STANDARD_LEFT_AREA_WIDTH = 24
+        const val STANDARD_RIGHT_AREA_WIDTH = 24
     }
 
-    private var leftArea: LA? = null
-    private var centerArea: CA? = null
-    private var rightArea: RA? = null
+    var leftArea: LA? = null
+    var centerArea: CA? = null
+    var rightArea: RA? = null
 
     private var _binding: ViewCompositeToolbarBinding? = null
     private val binding get() = _binding!!

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,6 +10,7 @@
         style="@style/ToolbarStyle" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/frg_chat_info__nsv_scroll"
         style="@style/VerticalScrollbars"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,12 +23,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/frg_chat_info__civ_chat_logo"
                 android:layout_width="@dimen/dp_120"
                 android:layout_height="@dimen/dp_120"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp_24" />
+                android:layout_marginTop="@dimen/dp_24"
+                app:actualImageScaleType="focusCrop"
+                app:fadeDuration="0"
+                app:placeholderImage="@color/background_secondary"
+                app:roundAsCircle="true" />
 
             <TextView
                 android:id="@+id/frg_chat_info__tv_chat_name"

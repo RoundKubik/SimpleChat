@@ -16,6 +16,7 @@
         tools:text="Профиль" />
 
     <ImageView
+        android:background="?selectableItemBackground"
         android:id="@+id/include_base_toolbar__iv_icon_back"
         android:layout_width="@dimen/dp_24"
         android:layout_height="@dimen/dp_24"
