@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.2324074074074074" />
+        <entry key="core-ui/src/main/res/drawable/ic_avatar_24.xml" value="0.1638888888888889" />
+        <entry key="core-ui/src/main/res/drawable/ic_gallery_24.xml" value="0.1638888888888889" />
+        <entry key="core-ui/src/main/res/drawable/ic_leave_24.xml" value="0.1638888888888889" />
+        <entry key="core-ui/src/main/res/drawable/ic_member_24.xml" value="0.1638888888888889" />
+        <entry key="core-ui/src/main/res/drawable/ic_notification.xml" value="0.1638888888888889" />
+        <entry key="core-ui/src/main/res/drawable/ic_notification_24.xml" value="0.1638888888888889" />
+        <entry key="core-ui/src/main/res/drawable/ic_privacy_24.xml" value="0.1638888888888889" />
         <entry key="core-ui/src/main/res/layout/fragment_search.xml" value="0.13402061855670103" />
         <entry key="core-ui/src/main/res/layout/item_chat_info.xml" value="0.17604166666666668" />
         <entry key="core-ui/src/main/res/layout/item_search_lottie_loader.xml" value="0.25677083333333334" />
@@ -12,6 +19,7 @@
         <entry key="core-ui/src/main/res/layout/view_container_lead_message_content.xml" value="0.36277173913043476" />
         <entry key="core-ui/src/main/res/layout/view_messages_attachment.xml" value="0.36277173913043476" />
         <entry key="core-ui/src/main/res/layout/view_search_chat.xml" value="0.2265625" />
+        <entry key="core-utils/src/main/res/drawable/ic_edit_24.xml" value="0.1638888888888889" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_chat_info.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_chats.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_edit_profile.xml" value="0.19270833333333334" />

@@ -99,18 +99,40 @@ class ChatInfoFragment : Fragment() {
     }
 
     private fun initMembersSettingsOption() {
-        with(  includeMembersMenuOptionBinging) {
+        with(includeMembersMenuOptionBinging) {
             includeMenuOptionsTvTitle.text = getString(ru.kubov.feature_main_impl.R.string.members)
             includeMenuOptionTvContentInfo.isVisible = true
+            includeMenuOptionsIvIcon.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_avatar_24
+                )
+            )
         }
     }
 
     private fun initMediaSettingsOption() {
-        includeMediaMenuOptionBinding.includeMenuOptionsTvTitle.text = getString(R.string.media)
+        with(includeMediaMenuOptionBinding) {
+            includeMenuOptionsTvTitle.text = getString(R.string.media)
+            includeMenuOptionsIvIcon.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_gallery_24
+                )
+            )
+        }
     }
 
     private fun initNotificationSettingsOption() {
-        includeNotificationOptionBinging.includeMenuOptionsTvTitle.text = getString(R.string.notifications)
+        with(includeNotificationOptionBinging) {
+            includeMenuOptionsTvTitle.text = getString(R.string.notifications)
+            includeMenuOptionsIvIcon.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_notification_24
+                )
+            )
+        }
     }
 
     private fun initPrivacySettingsOption() {
@@ -118,11 +140,25 @@ class ChatInfoFragment : Fragment() {
             includeMenuOptionsTvTitle.text = getString(R.string.privacy)
             includeMenuOptionIvIconAction.isVisible = false
             includeMenuOptionTvContentInfo.isVisible = true
+            includeMenuOptionsIvIcon.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_privacy_24
+                )
+            )
         }
     }
 
     private fun initLeaveChannelSettingsOption() {
-        includeLeaveChannelMenuOptionBinging.includeMenuOptionsTvTitle.text = getString(R.string.leave_channel)
+        with(includeLeaveChannelMenuOptionBinging) {
+            includeMenuOptionsTvTitle.text = getString(R.string.leave_channel)
+            includeMenuOptionsIvIcon.setImageDrawable(
+                ContextCompat.getDrawable(
+                    requireContext(),
+                    R.drawable.ic_leave_24
+                )
+            )
+        }
     }
 
     private fun initChatLogo() {
@@ -193,18 +229,20 @@ class ChatInfoFragment : Fragment() {
     }
 
     private fun mockdata() {
-        showChatInfo(ChatInfo(
-            123,
-            "https://picsum.photos/seed/picsum/200/300",
-            "StolenChat",
-            "test chat with desctipyion",
-            true,
-            UserChatRole.Admin,
-            10,
-            10,
-            false
+        showChatInfo(
+            ChatInfo(
+                123,
+                "https://picsum.photos/seed/picsum/200/300",
+                "StolenChat",
+                "test chat with desctipyion",
+                true,
+                UserChatRole.Admin,
+                10,
+                10,
+                false
 
-        ))
+            )
+        )
     }
 
     private fun inject() {
