@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav_graph"
-    app:startDestination="@id/searchFragment">
+    app:startDestination="@id/chatInfoFragment">
 
     <fragment
         android:id="@+id/profileFragment"
@@ -14,4 +14,8 @@
         android:id="@+id/searchFragment"
         android:name="ru.kubov.feature_main_impl.presentation.search.SearchFragment"
         android:label="SearchFragment" />
+    <fragment
+        android:id="@+id/chatInfoFragment"
+        android:name="ru.kubov.feature_main_impl.presentation.chat_info.ChatInfoFragment"
+        android:label="ChatInfoFragment" />
 </navigation>

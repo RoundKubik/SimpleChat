@@ -65,3 +65,21 @@ fun View.dpToPx(dp: Int): Int = context.dpToPx(dp)
 fun View.setAlphaIfNew(alpha: Float) {
     if (this.alpha != alpha) this.alpha = alpha
 }
+
+/**
+ * Extension provides setting of ripple effect by set into background of view
+ * background [android.R.attr.selectableItemBackgroundBorderless]
+ */
+fun View.addCircleRipple() = with(TypedValue()) {
+    context.theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, this, true)
+    setBackgroundResource(resourceId)
+}
+
+/**
+ * Extension provides setting of ripple effect by set into background of view
+ * background [android.R.attr.selectableItemBackground]
+ */
+fun View.addRipple() = with(TypedValue()) {
+    context.theme.resolveAttribute(android.R.attr.selectableItemBackground, this, true)
+    setBackgroundResource(resourceId)
+}

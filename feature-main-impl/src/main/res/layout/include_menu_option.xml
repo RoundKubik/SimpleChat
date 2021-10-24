@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ClickableItem"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_56">
+
+    <ImageView
+        android:id="@+id/include_menu_options__iv_icon"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_16"
+        android:scaleType="centerInside"
+        tools:src="@drawable/ic_edit_24" />
+
+    <TextView
+        android:id="@+id/include_menu_options__tv_title"
+        style="@style/TextView.Main"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_24"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_toEndOf="@id/include_menu_options__iv_icon"
+        tools:text="@string/edit_profile" />
+
+    <TextView
+        android:id="@+id/include_menu_option__tv_content_info"
+        style="@style/TextView.Medium.Secondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_40"
+        android:layout_toEndOf="@id/include_menu_options__tv_title"
+        android:gravity="end"
+        android:visibility="gone"
+        tools:text="Закрытый" />
+
+    <ImageView
+        android:id="@+id/include_menu_option__iv_icon_action"
+        android:layout_width="@dimen/dp_16"
+        android:layout_height="@dimen/dp_16"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/dp_16"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_right_arrow_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_60"
+        android:background="@color/divider" />
+
+</RelativeLayout>

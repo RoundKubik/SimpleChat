@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <androidx.core.widget.NestedScrollView
         style="@style/VerticalScrollbars"
@@ -19,16 +19,16 @@
 
             <com.facebook.drawee.view.SimpleDraweeView
                 android:id="@+id/frg_profile__iv_avatar"
-                fresco:roundBottomEnd="true"
-                fresco:roundTopEnd="true"
-                fresco:roundTopStart="true"
-                fresco:roundBottomStart="true"
-                fresco:roundedCornerRadius="@dimen/dp_24"
-                fresco:roundingBorderWidth="@dimen/dp_2"
                 android:layout_width="@dimen/dp_144"
                 android:layout_height="@dimen/dp_144"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/dp_36" />
+                android:layout_marginTop="@dimen/dp_36"
+                fresco:roundBottomEnd="true"
+                fresco:roundBottomStart="true"
+                fresco:roundTopEnd="true"
+                fresco:roundTopStart="true"
+                fresco:roundedCornerRadius="@dimen/dp_24"
+                fresco:roundingBorderWidth="@dimen/dp_2" />
 
             <TextView
                 android:id="@+id/frg_profile__tv_nickname"
@@ -59,7 +59,7 @@
 
             <include
                 android:id="@+id/frg_profile__include_edit_profile"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
             <TextView
                 style="@style/TextView.SettingTitle"
@@ -70,15 +70,15 @@
 
             <include
                 android:id="@+id/frg_profile__include_theme"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
             <include
                 android:id="@+id/frg_profile__include_data_and_storage"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
             <include
                 android:id="@+id/frg_profile__include_logout"
-                layout="@layout/include_profile_menu_option" />
+                layout="@layout/include_menu_option" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
