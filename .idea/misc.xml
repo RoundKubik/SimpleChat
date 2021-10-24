@@ -22,6 +22,7 @@
         <entry key="core-utils/src/main/res/drawable/ic_edit_24.xml" value="0.1638888888888889" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_chat_info.xml" value="0.2" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_chats.xml" value="0.2" />
+        <entry key="feature-main-impl/src/main/res/layout/fragment_edit_chat.xml" value="0.1890625" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_edit_profile.xml" value="0.19270833333333334" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_profile.xml" value="0.19635416666666666" />
         <entry key="feature-main-impl/src/main/res/layout/fragment_search.xml" value="0.378125" />

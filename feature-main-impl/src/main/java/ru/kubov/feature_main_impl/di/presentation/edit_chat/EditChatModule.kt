@@ -4,11 +4,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.kubov.core_di.presentation.viewmodel.ViewModelKey
+import com.kubov.core_di.presentation.viewmodel.ViewModelModule
+import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
-import ru.kubov.feature_main_impl.presentation.chats.ChatsViewModel
 import ru.kubov.feature_main_impl.presentation.edit_chat.EditChatViewModel
 
+
+@Module(
+    includes = [ViewModelModule::class]
+)
 class EditChatModule {
 
     @Provides
@@ -16,7 +21,7 @@ class EditChatModule {
     @ViewModelKey(EditChatViewModel::class)
     fun provideViewModel(
     ): ViewModel {
-        return ChatsViewModel()
+        return EditChatViewModel()
     }
 
     @Provides
