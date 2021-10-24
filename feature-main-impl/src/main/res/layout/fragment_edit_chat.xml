@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <com.kubov.core_ui.presentation.view.toolbar.CompositeToolbar
+        android:id="@+id/frg_edit_chat__ct_toolbar"
+        style="@style/ToolbarStyle" />
+
+    <View
+        android:id="@+id/frg_edit_chat__v_toolbar_shadow"
+        style="@style/DividerShadow"
+        android:layout_below="@id/frg_edit_chat__ct_toolbar" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/frg_chat_info__nsv_scroll"
+        style="@style/VerticalScrollbars"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frg_edit_chat__v_toolbar_shadow"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/frg_chat_info__sdv_chat_logo"
+                android:layout_width="@dimen/dp_120"
+                android:layout_height="@dimen/dp_120"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_24"
+                app:actualImageScaleType="focusCrop"
+                app:fadeDuration="0"
+                app:placeholderImage="@color/background_secondary"
+                app:roundAsCircle="true" />
+
+            <TextView
+                android:id="@+id/frg_chat_info__tv_chat_description"
+                style="@style/TextView.Main.Centred"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@string/tap_to_change_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_40"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextView.Main.Bold"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:text="@string/title" />
+
+                <EditText
+                    android:id="@+id/frg_edit_chat__et_chat_title"
+                    style="@style/EditText.Clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_chat_title" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_24"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/TextView.Main.Bold"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:gravity="center"
+                    android:text="@string/title" />
+
+                <EditText
+                    android:id="@+id/frg_edit_chat__et_chat_description"
+                    style="@style/EditText.Clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_chat_description" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
