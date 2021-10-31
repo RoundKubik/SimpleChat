@@ -19,4 +19,6 @@ interface MainRouter {
      * Provides navigation to open settings data and cache images screen
      */
     fun openSettingsStorageAndData()
+
+    fun openEditChatScreen()
 }
