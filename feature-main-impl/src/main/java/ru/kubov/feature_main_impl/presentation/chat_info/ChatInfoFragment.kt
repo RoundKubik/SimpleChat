@@ -198,7 +198,7 @@ class ChatInfoFragment : Fragment() {
             addCircleRipple()
         }
         iconEdit.setDebounceClickListener {
-            viewModel
+            viewModel.navigateToEditChatScreen()
         }
         binding.frgChatInfoCtToolbar.replaceRightArea(iconEdit)
     }

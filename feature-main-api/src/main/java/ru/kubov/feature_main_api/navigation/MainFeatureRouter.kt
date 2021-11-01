@@ -19,4 +19,7 @@ interface MainFeatureRouter {
      * Navigation to screen with settings of image storage and data
      */
     fun openSettingsStorageAndData()
+
+    fun openEditChatScreen()
+
 }
