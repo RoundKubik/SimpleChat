@@ -8,6 +8,7 @@ import com.kubov.core_di.presentation.viewmodel.ViewModelModule
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
+import ru.kubov.feature_main_api.navigation.MainFeatureRouter
 import ru.kubov.feature_main_impl.presentation.chat_info.ChatInfoViewModel
 
 @Module(
@@ -19,8 +20,9 @@ class ChatInfoModule {
     @IntoMap
     @ViewModelKey(ChatInfoViewModel::class)
     fun provideViewModel(
+        navigator: MainFeatureRouter?
     ): ViewModel {
-        return ChatInfoViewModel()
+        return ChatInfoViewModel(navigator)
     }
 
     @Provides

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Название</string>
+    <string name="tap_to_change_logo">Нажмите, чтобы изменить лого</string>
+    <string name="enter_chat_title">Введите название чата</string>
+    <string name="enter_chat_description">Введите описание чата</string>
+
+</resources>

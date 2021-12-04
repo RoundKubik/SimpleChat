@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import ru.kubov.feature_main_api.navigation.MainFeatureRouter
+import ru.kubov.feature_main_impl.presentation.edit_chat.EditChatFragment
 import ru.kubov.simplechat.R
 import javax.inject.Inject
 
@@ -80,5 +81,17 @@ class Navigator @Inject constructor() : MainFeatureRouter {
     override fun openSettingsStorageAndData() {
         lastUsedNavController = navController
         navController?.navigate(R.id.settingsDataAndStorageFragment)
+    }
+
+    override fun openEditChatScreen() {
+        when (bottomNavController?.currentDestination?.id) {
+            R.id.chatInfoFragment -> {
+                val bundle = EditChatFragment.makeBundle()
+                navController?.navigate(
+                    R.id.editChatFragment,
+                    bundle
+                )
+            }
+        }
     }
 }

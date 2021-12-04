@@ -15,7 +15,6 @@ import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import ru.kubov.core_utils.extensions.setDebounceClickListener
 import ru.kubov.feature_main_impl.R
-import ru.kubov.feature_main_impl.databinding.FrgamentChatInfoBinding
 import ru.kubov.feature_main_impl.databinding.IncludeMenuOptionBinding
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponent
 import ru.kubov.feature_main_impl.di.module.MainFeatureComponentHolder
@@ -25,6 +24,7 @@ import ru.kubov.core_utils.domain.models.ChatInfo
 import ru.kubov.core_utils.domain.models.UserChatRole
 import ru.kubov.core_utils.extensions.addCircleRipple
 import ru.kubov.core_utils.extensions.showImage
+import ru.kubov.feature_main_impl.databinding.FragmentChatInfoBinding
 
 
 // TODO: 20.10.2021 add documentation
@@ -37,7 +37,7 @@ class ChatInfoFragment : Fragment() {
     @Inject
     lateinit var viewModel: ChatInfoViewModel
 
-    private var _binding: FrgamentChatInfoBinding? = null
+    private var _binding: FragmentChatInfoBinding? = null
     private val binding get() = _binding!!
 
     private var _includeMembersMenuOptionBinging: IncludeMenuOptionBinding? = null
@@ -69,7 +69,7 @@ class ChatInfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         inject()
-        _binding = FrgamentChatInfoBinding.inflate(inflater, container, false)
+        _binding = FragmentChatInfoBinding.inflate(inflater, container, false)
         _includeMembersMenuOptionBinging = IncludeMenuOptionBinding.bind(binding.frgChatInfoIncludeMembers.root)
         _includeMediaMenuOptionBinding = IncludeMenuOptionBinding.bind(binding.frgChatInfoIncludeMedia.root)
         _includeNotificationOptionBinging = IncludeMenuOptionBinding.bind(binding.frgChatInfoIncludeNotifications.root)
@@ -198,7 +198,7 @@ class ChatInfoFragment : Fragment() {
             addCircleRipple()
         }
         iconEdit.setDebounceClickListener {
-
+            viewModel.navigateToEditChatScreen()
         }
         binding.frgChatInfoCtToolbar.replaceRightArea(iconEdit)
     }

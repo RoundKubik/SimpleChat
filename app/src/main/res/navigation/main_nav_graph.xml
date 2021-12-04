@@ -22,4 +22,10 @@
         android:name="ru.kubov.feature_main_impl.presentation.settings_data_and_storage.SettingsDataAndStorageFragment"
         android:label="SettingsDataAndStorageFragment"
         tools:layout="@layout/fragment_settings_data_and_storage" />
+    <fragment
+        android:id="@+id/editChatFragment"
+        android:name="ru.kubov.feature_main_impl.presentation.edit_chat.EditChatFragment"
+        android:label="EditChatFragment" />
+
+
 </navigation>
